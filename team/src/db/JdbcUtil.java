@@ -18,7 +18,7 @@ public class JdbcUtil {
 
 		Class.forName("com.mysql.jdbc.Driver");
 		con = DriverManager.getConnection(url, user, password);		
-		
+		con.setAutoCommit(false);
 		return con;
 	}
 	

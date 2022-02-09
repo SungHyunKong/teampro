@@ -7,7 +7,7 @@ import vo.BoardBean;
 public class BoardListService {
 
 	public int getListCount() {
-		// TODO Auto-generated method stub
+		int listCount=0;
 		return 0;
 	}
 
