@@ -112,7 +112,7 @@ public class BoardFrontController extends HttpServlet {
 				RequestDispatcher dispatcher=request.getRequestDispatcher(forward.getPath());
 				dispatcher.forward(request, response);
 			}
-		}
+		} 
 	}
 	
 	protected void deGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
