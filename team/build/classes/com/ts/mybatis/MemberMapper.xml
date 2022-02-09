@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ts.mybatis.MemberMapper">
+
+<select id="memberList" resultType="memberVO">
+    select * from worker1
+</select>
+
+<insert id="memberInsert" parameterType="memberVO">
+    insert into worker1(worker_code,worker_id,worker_name,worker_birth,worker_sung,worker_rank,worker_dpname) 
+    values(#{worker_code},#{worker_id},#{worker_name},#{worker_birth},#{worker_sung},#{worker_rank},#{worker_dpname})
+</insert>
+
+<!-- <delete id="memberDelete" parameterType="Integer"> -->
+<!--     delete from member where num=#{num} -->
+<!-- </delete> -->
+
+<!-- <select id="memberContent" parameterType="Integer" resultType="memberVO"> -->
+<!--     select * from member where num=#{num} -->
+<!-- </select> -->
+
+<!-- <update id="memberUpdate" parameterType="memberVO"> -->
+<!-- update member set age=#{age}, email=#{email},phone=#{phone} where num=#{num}     -->
+<!-- </update> -->
+</mapper>

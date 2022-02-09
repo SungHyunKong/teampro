@@ -5,7 +5,7 @@
 <meta
 	content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"
 	name="viewport">
-<title>사원관리</title>
+<title>근태관리</title>
 
 <!-- General CSS Files -->
 <link rel="stylesheet"
@@ -105,15 +105,7 @@
 					</div>
 					<ul class="sidebar-menu">
 						<li class=active><a class="nav-link" href="blank.html"><i
-								class="far fa-square"></i> <span>Blank Page</span></a></li>
-					</ul>
-					<ul class="sidebar-menu">
-						<li class=active><a class="nav-link" href="workertime.html"><i
 								class="far fa-square"></i> <span>근태관리</span></a></li>
-					</ul>
-					<ul class="sidebar-menu">
-						<li class=active><a class="nav-link" href="worker.html"><i
-								class="far fa-square"></i> <span>사원관리</span></a></li>
 					</ul>
 
 				</aside>
@@ -123,25 +115,27 @@
 			<div class="main-content">
 				<section class="section">
 					<div class="section-header">
-						<h1>사원관리</h1>
+						<h1>근태관리</h1>
 					</div>
 
 					<div class="section-body">
 					 <div class="card">
                   <div class="card-header">
+                  <div>
+                  <!--날짜 보여주는 달력 추가 -->
+                  <input type = "date" id="dae-picker"> 
+                  </div>
                   </div>
                   <div class="card-body">
                     <table class="table table-striped">
                       <thead>
                         <tr>
                           <th scope="col">사원코드</th>
-                          <th scope="col">아이디</th>
                           <th scope="col">이름</th>
-                          <th scope="col">생년월일</th>
-                          <th scope="col">gender</th>
+                          <th scope="col">출근시간</th>
+                          <th scope="col">퇴근시간</th>
                           <th scope="col">직급</th>
-                          <th scope="col">부서명</th>
-                          <th scope="col">권한</th>
+                          <th scope="col">비고</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -149,8 +143,6 @@
                           <th scope="row">1</th>
                           <td>Mark</td>
                           <td>Otto</td>
-                          <td>@mdo</td>
-                          <td>@mdo</td>
                           <td>@mdo</td>
                           <td>@mdo</td>
                           <td>@mdo</td>
@@ -162,15 +154,11 @@
                           <td>@fat</td>
                           <td>@fat</td>
                           <td>@fat</td>
-                          <td>@fat</td>
-                          <td>@fat</td>
                         </tr>
                         <tr>
                           <th scope="row">3</th>
                           <td>Larry</td>
                           <td>the Bird</td>
-                          <td>@twitter</td>
-                          <td>@twitter</td>
                           <td>@twitter</td>
                           <td>@twitter</td>
                           <td>@twitter</td>
@@ -199,6 +187,14 @@
 	<script src="assets/modules/nicescroll/jquery.nicescroll.min.js"></script>
 	<script src="assets/modules/moment.min.js"></script>
 	<script src="assets/js/stisla.js"></script>
+	<script>
+		var date=new Date();
+		var year=date.getFullYear();
+		var month= date.getMonth();
+		var todayDate = String(date.getDate()).padStart(2,'0');
+		var datePattern= year + '-'+ month + '-' +todayDate;
+		document.getElementById("date-picker").value=datePattern;
+	</script>
 	<!-- JS Libraies -->
 
 	<!-- Page Specific JS File -->
