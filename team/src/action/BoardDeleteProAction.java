@@ -28,8 +28,21 @@ public class BoardDeleteProAction implements Action {
 			out.close();
 		} else {
 			boolean isDeleteSuccess=boardDeleteProService.removeArticle(qa_num);
+			
+			if(!isDeleteSuccess) {
+				response.setContentType("text/html;charset=utf-8");
+				PrintWriter out=response.getWriter();
+				out.println("<script>");
+				out.println("alert('삭제실패');");
+				out.println("history.bac();");
+				out.close();
+			} else {
+				forward=new ActionForward();
+				forward.setRedirect(true);
+				forward.setPath("boardList.bo?page="+ nowPage);
+			}
 		}
-		return null;
+		return forward;
 	}
 
 }
