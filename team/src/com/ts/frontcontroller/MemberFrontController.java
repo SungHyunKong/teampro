@@ -11,17 +11,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.ts.controller.Controller;
-import com.ts.controller.MemberContentController;
-import com.ts.controller.MemberDeleteController;
 import com.ts.controller.MemberInsertController;
-import com.ts.controller.MemberListController;
-import com.ts.controller.MemberRegisterController;
-import com.ts.controller.MemberUpdateController;
 import com.ts.model.MemberDAO;
 import com.ts.model.MemberVO;
 
 
-//@WebServlet("*.do")
+@WebServlet("*.do")
 public class MemberFrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

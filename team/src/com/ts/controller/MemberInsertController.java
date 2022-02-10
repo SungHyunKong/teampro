@@ -1,4 +1,4 @@
-package controller;
+package com.ts.controller;
 
 import java.io.IOException;
 
@@ -6,8 +6,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.MemberDAO;
-import model.MemberVO;
+import com.ts.model.MemberDAO;
+import com.ts.model.MemberVO;
 
 
 public class MemberInsertController implements Controller{

@@ -1,4 +1,4 @@
-package model;
+package com.ts.model;
 
 import java.io.InputStream;
 
