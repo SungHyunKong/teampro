@@ -1,91 +1,69 @@
-package com.ts.model;
+package model;
 
 public class MemberVO {
 
-	private String worker_code;
-	private String worker_id;
-	private String worker_name;
-	private String worker_birth;
-	private String worker_sung;
-	private String worker_rank;
-	private String worker_dpname;
-
-	public MemberVO() {
-	}
-
-	public MemberVO(String worker_code, String worker_id, String worker_name, String worker_birth, String worker_sung,
-			String worker_rank, String worker_dpname) {
+	private String id;
+	private String pw;
+	private String name;
+	private String birth;
+	private String gender;
+	private String email;
+	private String tel;
+	
+	public MemberVO() {}
+	
+	public MemberVO(String id, String pw, String name, String birth, String gender, String email, String tel) {
 		super();
-		this.worker_code = worker_code;
-		this.worker_id = worker_id;
-		this.worker_name = worker_name;
-		this.worker_birth = worker_birth;
-		this.worker_sung = worker_sung;
-		this.worker_rank = worker_rank;
-		this.worker_dpname = worker_dpname;
+		this.id = id;
+		this.pw = pw;
+		this.name = name;
+		this.birth = birth;
+		this.gender = gender;
+		this.email = email;
+		this.tel = tel;
 	}
 
-	public final String getWorker_code() {
-		return worker_code;
+    public String getId() {
+		return id;
 	}
-
-	public final void setWorker_code(String worker_code) {
-		this.worker_code = worker_code;
+	public void setId(String id) {
+		this.id = id;
 	}
-
-	public final String getWorker_id() {
-		return worker_id;
+	public String getPw() {
+		return pw;
 	}
-
-	public final void setWorker_id(String worker_id) {
-		this.worker_id = worker_id;
+	public void setPw(String pw) {
+		this.pw = pw;
 	}
-
-	public final String getWorker_name() {
-		return worker_name;
+	public String getName() {
+		return name;
 	}
-
-	public final void setWorker_name(String worker_name) {
-		this.worker_name = worker_name;
+	public void setName(String name) {
+		this.name = name;
 	}
-
-	public final String getWorker_birth() {
-		return worker_birth;
+	public String getBirth() {
+		return birth;
 	}
-
-	public final void setWorker_birth(String worker_birth) {
-		this.worker_birth = worker_birth;
+	public void setBirth(String birth) {
+		this.birth = birth;
 	}
-
-	public final String getWorker_sung() {
-		return worker_sung;
+	public String getGender() {
+		return gender;
 	}
-
-	public final void setWorker_sung(String worker_sung) {
-		this.worker_sung = worker_sung;
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
-
-	public final String getWorker_rank() {
-		return worker_rank;
+	public String getEmail() {
+		return email;
 	}
-
-	public final void setWorker_rank(String worker_rank) {
-		this.worker_rank = worker_rank;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-
-	public final String getWorker_dpname() {
-		return worker_dpname;
+	public String getTel() {
+		return tel;
 	}
-
-	public final void setWorker_dpname(String worker_dpname) {
-		this.worker_dpname = worker_dpname;
+	public void setTel(String tel) {
+		this.tel = tel;
 	}
-
-	@Override
-	public String toString() {
-		return "MemberVO [worker_code=" + worker_code + ", worker_id=" + worker_id + ", worker_name=" + worker_name
-				+ ", worker_birth=" + worker_birth + ", worker_sung=" + worker_sung + ", worker_rank=" + worker_rank
-				+ ", worker_dpname=" + worker_dpname + "]";
-	}
-
 }
+
