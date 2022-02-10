@@ -12,7 +12,9 @@
     insert into worker1(worker_code,worker_id,worker_name,worker_birth,worker_sung,worker_rank,worker_dpname) 
     values(#{worker_code},#{worker_id},#{worker_name},#{worker_birth},#{worker_sung},#{worker_rank},#{worker_dpname})
 </insert>
-
+<select id="scheduleInfo" parameterType="ScheduleVO">
+    select * from cal
+</select>
 <!-- <delete id="memberDelete" parameterType="Integer"> -->
 <!--     delete from member where num=#{num} -->
 <!-- </delete> -->
