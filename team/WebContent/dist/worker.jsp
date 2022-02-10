@@ -44,7 +44,6 @@
 					<div class="section-header">
 						<h1>사원관리</h1>
 					</div>
-
 					<div class="section-body">
 						<div class="card">
 							<div class="card-header">
