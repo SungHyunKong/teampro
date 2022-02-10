@@ -21,7 +21,7 @@ import com.ts.model.MemberDAO;
 import com.ts.model.MemberVO;
 
 
-@WebServlet("*.do")
+//@WebServlet("*.do")
 public class MemberFrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
