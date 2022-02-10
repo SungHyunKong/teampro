@@ -10,6 +10,7 @@ public class HandlerMapping {
 		mappings=new HashMap<String, Controller>();
 	
 		mappings.put("/memberInsert.do", new MemberInsertController());
+		mappings.put("/Schedule.do", new ScheduleController());
 //		mappings.put("/memberRegister.do", new MemberRegisterController());
 //		mappings.put("/memberContent.do", new MemberContentController());
 //		mappings.put("/memberUpdate.do", new MemberUpdateController());
