@@ -79,23 +79,24 @@
 				calendar.unselect()
 				},
 			events:
-				$.ajax({
-					url: './Schedule.do',
+				/* $.ajax({
+					url: '/Schedule.do',
 					type : 'post',
 					datatype: 'json',
-					data : {
-						title : "가나",
-						start : "2022-02-07", 
-						end : "2022-02-11"
-						},
 					success :function(data){
-						alert('성공');
+						events.add(title)
+						events.add(start)
+						events.add(end)
 					},
 					error:function() {
 						alert('실패');
 					},
-				})
-			
+				}) */
+			[{
+				title:"프로젝트 해야함",
+				start:"2022-02-04",
+				end:"2022-02-11"
+			}]
 					
 		});
 		// 캘린더 랜더링
