@@ -39,32 +39,22 @@
                           <th scope="col">비고</th>
                         </tr>
                       </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
-                          <td>@mdo</td>
-                          <td>@mdo</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">2</th>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                          <td>@fat</td>
-                          <td>@fat</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                          <td>@twitter</td>
-                          <td>@twitter</td>
-                        </tr>
-                      </tbody>
+                   <tbody>
+
+								<c:forEach var="vo" items="${list}">
+									<tr>
+										<th scope="row">1</th>
+										<td>${vo.worker_code}</td>
+										<td>${vo.worker_id}</td>
+										<td>${vo.worker_name}</td>
+										<td>${vo.worker_birth}</td>
+										<td>${vo.worker_sung}</td>
+										<td>${vo.worker_rank}</td>
+										<td>${vo.worker_dpname}</td>
+									</tr>
+								</c:forEach>
+
+							</tbody>
                     </table>
                   </div>
                 </div>

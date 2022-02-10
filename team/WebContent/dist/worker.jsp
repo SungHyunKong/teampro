@@ -22,17 +22,15 @@
 		<div class="section-body">
 				<div class="card">
 					<div class="card-header">
-						<a href="insert.jsp">광진이바보</a>
 					</div>
 					<div class="card-body">
 						<table class="table table-striped">
 							<thead>
 								<tr>
-									<th scope="col">사원코드</th>
 									<th scope="col">아이디</th>
 									<th scope="col">이름</th>
 									<th scope="col">생년월일</th>
-									<th scope="col">gender</th>
+									<th scope="col">성별</th>
 									<th scope="col">직급</th>
 									<th scope="col">부서명</th>
 									<th scope="col">권한</th>
@@ -43,7 +41,6 @@
 								<c:forEach var="vo" items="${list}">
 									<tr>
 										<th scope="row">1</th>
-										<td>${vo.worker_code}</td>
 										<td>${vo.worker_id}</td>
 										<td>${vo.worker_name}</td>
 										<td>${vo.worker_birth}</td>
