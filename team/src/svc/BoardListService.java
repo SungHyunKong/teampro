@@ -12,7 +12,7 @@ public class BoardListService {
 	}
 
 	public ArrayList<BoardBean> getArticleList(int page, int limit) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
