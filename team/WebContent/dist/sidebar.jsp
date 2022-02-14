@@ -34,17 +34,17 @@
 	<div class="main-sidebar sidebar-style-2">
 				<aside id="sidebar-wrapper">
 					<div class="sidebar-brand">
-						<a href="${ctp}/dist/index.html">남성호르몬</a>
+						<a href="${ctp}/dist/main.jsp">남성호르몬</a>
 					</div>
 					<div class="sidebar-brand sidebar-brand-sm">
 						<a href="${ctp}/dist/index.html">TS</a>
 					</div>
 					<ul class="sidebar-menu">
-						<li class=active><a class="nav-link" href="${ctp}/dist/#"><i
+						<li class=active><a class="nav-link" href="${ctp}/dist/worker.jsp"><i
 								class="far fa-square"></i> <span>사원관리</span></a></li>
 					</ul>
 					<ul class="sidebar-menu">
-						<li class=active><a class="nav-link" href="${ctp}/dist/#"><i
+						<li class=active><a class="nav-link" href="${ctp}/dist/workertime.jsp"><i
 								class="far fa-square"></i> <span>근태관리</span></a></li>
 					</ul>
 

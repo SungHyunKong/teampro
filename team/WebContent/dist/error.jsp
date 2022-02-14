@@ -1,9 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@page isErrorPage="true" %>
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>503 &mdash; Stisla</title>
+  <title>에러페이지</title>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="assets/modules/bootstrap/css/bootstrap.min.css">
@@ -14,57 +19,37 @@
   <!-- Template CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/components.css">
-<!-- Start GA -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-94034622-3');
-</script>
-<!-- /END GA --></head>
+</head>
 
 <body>
   <div id="app">
-    <section class="section">
       <div class="container mt-5">
         <div class="page-error">
           <div class="page-inner">
-            <h1>503</h1>
+            <h1>error</h1>
             <div class="page-description">
-            	Be right back.
+              	찾을수 없는 페이지 입니다.<br>
+              	응 해킹 못해 화나쥬?
             </div>
             <div class="page-search">
-              <form>              	
                 <div class="form-group floating-addon floating-addon-not-append">
                   <div class="input-group">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text">                          
-                        <i class="fas fa-search"></i>
-                      </div>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Search">
-                    <div class="input-group-append">
-                      <button class="btn btn-primary btn-lg">
-                        Search
-                      </button>
                     </div>
                   </div>
                 </div>
-              </form>
               <div class="mt-3">
-                <a href="index.html">Back to Home</a>
+                <a href="javascript:history.back();">이전 페이지로 돌아가기</a>
+              </div>
+              <div class="mt-3">
+                <a href="index.html">홈으로 돌아가기</a>
               </div>
             </div>
           </div>
         </div>
         <div class="simple-footer mt-5">
-          Copyright &copy; Stisla 2018
+          4조  남성호르몬 &copy; 김태완 정성현 공성현 심준수 한광진
         </div>
       </div>
-    </section>
-  </div>
 
   <!-- General JS Scripts -->
   <script src="assets/modules/jquery.min.js"></script>

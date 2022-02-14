@@ -4,7 +4,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>사원관리</title>
+<title>메인페이지</title>
 
 </head>
 
@@ -15,16 +15,16 @@
 			<%@include file="header.jsp"%>
 			<%@include file="sidebar.jsp"%>
 			<div class="main-content">
-		<section class="section">
-			<div class="section-header">
-				<h1>참고 페이지</h1>
+				<section class="section">
+					<div class="section-header">
+						<h1>참고 페이지</h1>
+					</div>
+
+					<!--  코드작성하시오  이 페이지는 건들지 마시오 -->
+
+
+				</section>
 			</div>
-			
-		<!--  코드작성하시오  이 페이지는 건들지 마시오 -->
-	
-		
-			</section>
-	</div>
 			<%@include file="footer.jsp"%>
 		</div>
 	</div>
