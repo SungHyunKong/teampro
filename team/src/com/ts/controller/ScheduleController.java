@@ -1,3 +1,4 @@
+
 package com.ts.controller;
 
 import java.io.IOException;
@@ -15,18 +16,19 @@ import com.ts.model.ScheduleVO;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-public class ScheduleController implements Controller{
-	
+
+public class ScheduleController implements Controller {
+
 	@Override
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		ScheduleDAO dao = new ScheduleDAO();
-		List<ScheduleVO> schedule =  dao.scheduleInfo();
-		
+		List<ScheduleVO> schedule = dao.scheduleInfo();
+
 		JSONObject obj = new JSONObject();
 		try {
 			for (int i = 0; i < schedule.size(); i++) {
-				obj.put("title",schedule.get(i).getTitle() );
+				obj.put("title", schedule.get(i).getTitle());
 				obj.put("start", schedule.get(i).getStart1());
 				obj.put("end", schedule.get(i).getEnd1());
 			}
@@ -36,4 +38,3 @@ public class ScheduleController implements Controller{
 		return null;
 	}
 }
-

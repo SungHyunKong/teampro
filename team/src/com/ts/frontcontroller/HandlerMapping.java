@@ -11,8 +11,8 @@ public class HandlerMapping {
 	
 		mappings.put("/memberInsert.do", new MemberInsertController());
 		mappings.put("/Schedule.do", new ScheduleController());
-//		mappings.put("/memberRegister.do", new MemberRegisterController());
-//		mappings.put("/memberContent.do", new MemberContentController());
+		mappings.put("/worker.do", new WorkerController());
+		mappings.put("/workertime.do", new WorkerTimeListController());
 //		mappings.put("/memberUpdate.do", new MemberUpdateController());
 //		mappings.put("/memberDelete.do", new MemberDeleteController());
 	}

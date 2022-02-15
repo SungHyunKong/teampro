@@ -32,25 +32,21 @@
                       <thead>
                         <tr>
                           <th scope="col">사원코드</th>
-                          <th scope="col">이름</th>
                           <th scope="col">출근시간</th>
                           <th scope="col">퇴근시간</th>
+                          <th scope="col">날짜</th>
                           <th scope="col">직급</th>
-                          <th scope="col">비고</th>
                         </tr>
                       </thead>
                    <tbody>
 
 								<c:forEach var="vo" items="${list}">
 									<tr>
-										<th scope="row">1</th>
 										<td>${vo.worker_code}</td>
-										<td>${vo.worker_id}</td>
-										<td>${vo.worker_name}</td>
-										<td>${vo.worker_birth}</td>
-										<td>${vo.worker_sung}</td>
+										<td>${vo.worker_stime}</td>
+										<td>${vo.worker_etime}</td>
+										<td>${vo.worker_date}</td>
 										<td>${vo.worker_rank}</td>
-										<td>${vo.worker_dpname}</td>
 									</tr>
 								</c:forEach>
 

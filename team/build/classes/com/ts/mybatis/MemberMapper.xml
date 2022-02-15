@@ -4,8 +4,11 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ts.mybatis.MemberMapper">
 
-<select id="memberList" resultType="memberVO">
-    select * from worker1
+<select id="WorkerList" resultType="WorkerVO">
+	select * from worker
+</select>
+<select id="WorkerTimeList" resultType="WorkerTimeVO">
+	select * from worketime
 </select>
 
 <insert id="memberInsert" parameterType="memberVO">

@@ -7,6 +7,8 @@
     <typeAliases>
         <typeAlias type="com.ts.model.MemberVO" alias="memberVO"/>
         <typeAlias type="com.ts.model.ScheduleVO" alias="ScheduleVO"/>
+        <typeAlias type="com.ts.model.WorkerVO" alias="WorkerVO"/>
+        <typeAlias type="com.ts.model.WorkerTimeVO" alias="WorkerTimeVo"/>
     </typeAliases>
   <environments default="development">
     <environment id="development">
