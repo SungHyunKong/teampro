@@ -24,10 +24,9 @@
                     <table class="table table-striped">
                       <thead>
                         <tr>
-                          <th scope="col">작성자</th>
                           <th scope="col">결제제목</th>
+                          <th scope="col">작성자</th>
                           <th scope="col">작성시간</th>
-                          <th scope="col">승인여부</th>
                         </tr>
                       </thead>
                    <tbody>

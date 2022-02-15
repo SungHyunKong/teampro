@@ -28,3 +28,4 @@ ALTER TABLE `q&aBoard`
 	AUTO_INCREMENT = 1;
 	
 drop table `q&aBoard`;
+
