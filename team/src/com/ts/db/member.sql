@@ -89,8 +89,6 @@ DROP TABLE IF EXISTS `message` RESTRICT;
 
 
 
-
-
 -- 사원관리
 CREATE TABLE `worker` (
 	`worker_code`   INT auto_increment primary key, -- 사원코드
@@ -114,12 +112,12 @@ CREATE TABLE `worketime` (
 
 -- 회원가입
 CREATE TABLE `member` (
-	`member_ID`    VARCHAR(20) NOT NULL, -- 아이디
-	`member_pass`  VARCHAR(20) NOT NULL, -- 비밀번호
+	`member_id`    VARCHAR(20) NOT NULL, -- 아이디
+	`member_pw`  VARCHAR(20) NOT NULL, -- 비밀번호
 	`member_name`  VARCHAR(20) NOT NULL, -- 이름
-	`member_sung`  VARCHAR(20) NOT NULL, -- 성별
-	`member_birth` DATE        NOT NULL, -- 생년월일
-	`member_email` VARCHAR(20) NOT NULL  -- 이메일
+	`member_birth` varchar(30)  NOT NULL, -- 생년월일
+	`member_gender`  VARCHAR(20) NOT NULL, -- 성별
+	`member_email` VARCHAR(30) NOT NULL  -- 이메일
 );
 
 -- 회원가입
@@ -149,15 +147,16 @@ CREATE TABLE `hospital` (
 
 -- 질문게시판
 CREATE TABLE `QA` (
-	`qaboard_num`        INT auto_increment primary key, -- 게시판번호
-	`qaboard_writer`     INT          NULL,     -- 작성자
-	`qaboard_originno`   INT          NOT NULL, -- 부모번호
-	`qaboard_groupord`   INT          NOT NULL, -- 답글순서
-	`qaboard_grouplayer` INT          NOT NULL, -- 답글분류
-	`qaboard_date`       DATE         NOT NULL, -- 작성날짜
-	`qaboard_name`       VARCHAR(20)  NOT NULL, -- 게시판이름
-	`qaboard_coment`     VARCHAR(100) NOT NULL, -- 게시판내용
-	`qaboard_section`    INT          NOT NULL  -- 게시판분류
+	`qa_num` INT auto_increment primary key, -- 게시판번호
+	`qa_id`  varchar(20),     -- 작성자
+	`qa_subject`  varchar(50), -- 글 제목
+	`qa_content`   text, -- 글 내용
+	`qa_file` varchar(50), -- 파일
+	`qa_re_ref` int, -- 답글로 묶기
+	`qa_re_lev` int, -- 들여쓰기
+	`qa_re_seq` int, -- 답글 순서
+	`qa_readcount` int, -- 조회수
+	`qa_date` date      -- 게시글 올린 시간
 );
 
 -- 질문게시판
@@ -187,9 +186,6 @@ CREATE TABLE `meetingroom` (
 	`meetringroom_name` VARCHAR(20)  NULL      -- 회의실이름
 );
 
--- 회의실
-
-
 -- 전자결제
 CREATE TABLE `pay` (
 	`pay_code`   INT auto_increment primary key, -- 결제코드
@@ -197,11 +193,11 @@ CREATE TABLE `pay` (
 	`pay_title`   VARCHAR(20)   NULL,     -- 결제제목
 	`pay_content` VARCHAR(100)  NULL,     -- 결제내용
 	`pay_file`    VARCHAR(50)   NULL,     -- 첨부파일
+	'pay_time'    DATETIME      NULL,     -- 결제신청시간
 	`pay_admin`   VARCHAR(20)   NULL,     -- 결재자
+	'pay_admintime' DATETIME    NULL,     -- 결재자시간
 	`pay_yn`      ENUM('y','n') NULL      -- 승인여부
 );
-
--- 전자결제
 
 -- 권한관리
 CREATE TABLE `power` (
@@ -265,12 +261,13 @@ ALTER TABLE `hospital`
 ALTER TABLE `QA`
 	ADD CONSTRAINT `FK_worker_TO_QA` -- 사원관리 -> 질문게시판
 		FOREIGN KEY (
-			`qaboard_writer` -- 작성자
+			`qa_id` -- 작성자
 		)
 		REFERENCES `worker` ( -- 사원관리
 			`worker_code` -- 사원코드
 		);
-
+-- 질문게시판과 회원가입 테이블 외래키 설정
+ ALTER TABLE `QA` ADD CONSTRAINT `FK_member_TO_QA` FOREIGN KEY(qa_id) REFERENCES member(member_id);
 -- 회의실예약
 ALTER TABLE `meeting`
 	ADD CONSTRAINT `FK_worker_TO_meeting` -- 사원관리 -> 회의실예약
