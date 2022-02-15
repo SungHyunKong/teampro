@@ -9,7 +9,24 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
+  <servlet>
+      <display-name>BoardMemberFrontController</display-name>
+      <servlet-name>BoardMemberFrontController</servlet-name>
+      <servlet-class>com.ts.frontcontroller.BoardMemberFrontController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>BoardMemberFrontController</servlet-name>
+      <url-pattern>*.me</url-pattern>
+  </servlet-mapping>
+  <servlet>
+      <display-name>BoardFrontController</display-name>
+      <servlet-name>BoardFrontController</servlet-name>
+      <servlet-class>com.ts.frontcontroller.BoardFrontController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>BoardFrontController</servlet-name>
+      <url-pattern>*.bo</url-pattern>
+  </servlet-mapping>
   <error-page>
 		<error-code>403</error-code>
 		<location>/error.jsp</location>      
