@@ -22,9 +22,9 @@
 		<div class="section-body">
 				<div class="card">
 					<div class="card-header">
-					 <a href="#" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> 수정</a>
+					 <a href="workerUpdate.jsp" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> 수정</a>
 					 <a href="#" class="btn btn-icon icon-left btn-danger"><i class="fas fa-times"></i> 삭제</a>
-					 <a href="#" class="btn btn-icon icon-left btn-success"><i class="fas fa-check"></i> 등록</a>
+					 <a href="workerInsert.jsp" class="btn btn-icon icon-left btn-success"><i class="fas fa-check"></i> 등록</a>
 					</div>
 					<div class="card-body">
 						<table class="table table-striped">
@@ -37,10 +37,10 @@
 									<th scope="col">직급</th>
 									<th scope="col">부서명</th>
 									<th scope="col">권한</th>
+									<th scope="col">선택</th>
 								</tr>
 							</thead>
 							<tbody>
-
 								<c:forEach var="vo" items="${list}">
 									<tr>
 										<td>${vo.worker_id}</td>
@@ -50,6 +50,7 @@
 										<td>${vo.worker_rank}</td>
 										<td>${vo.worker_dpname}</td>
 										<td>${vo.worker_yn}</td>
+										<td><input type="checkbox" name="chb" id="check"></td>
 									</tr>
 								</c:forEach>
 

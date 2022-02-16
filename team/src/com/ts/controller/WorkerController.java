@@ -14,7 +14,6 @@ public class WorkerController implements Controller{
 
 	@Override
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
-		System.out.println("11111111111111111111111111");
 		WorkerDAO dao=new WorkerDAO();
 		List<WorkerVO> list=dao.WorkerList();
 		request.setAttribute("list", list);
