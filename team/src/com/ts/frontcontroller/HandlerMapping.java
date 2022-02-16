@@ -13,8 +13,8 @@ public class HandlerMapping {
 		mappings.put("/Schedule.do", new ScheduleController());
 		mappings.put("/worker.do", new WorkerController());
 		mappings.put("/workertime.do", new WorkerTimeListController());
-//		mappings.put("/memberUpdate.do", new MemberUpdateController());
-//		mappings.put("/memberDelete.do", new MemberDeleteController());
+		mappings.put("/workerDelete.do", new WorkerDeleteController());
+		mappings.put("/workerInsert.do", new WorkerInsertController());
 	}
 	
 	public Controller getController(String command) {

@@ -23,7 +23,7 @@
 				<div class="card">
 					<div class="card-header">
 					 <a href="workerUpdate.jsp" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> 수정</a>
-					 <a href="#" class="btn btn-icon icon-left btn-danger"><i class="fas fa-times"></i> 삭제</a>
+					 <a href="workerDelete.do" class="btn btn-icon icon-left btn-danger"><i class="fas fa-times"></i> 삭제</a>
 					 <a href="workerInsert.jsp" class="btn btn-icon icon-left btn-success"><i class="fas fa-check"></i> 등록</a>
 					</div>
 					<div class="card-body">

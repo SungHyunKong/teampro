@@ -7,14 +7,18 @@
 <select id="WorkerList" resultType="WorkerVO">
 	select * from worker
 </select>
+
 <select id="WorkerTimeList" resultType="WorkerTimeVO">
 	select * from worketime
 </select>
-
-<insert id="memberInsert" parameterType="memberVO">
-    insert into worker1(worker_code,worker_id,worker_name,worker_birth,worker_sung,worker_rank,worker_dpname) 
-    values(#{worker_code},#{worker_id},#{worker_name},#{worker_birth},#{worker_sung},#{worker_rank},#{worker_dpname})
+<insert id="WorkerInsert" parameterType="WorkerVO">
+    insert into worker(worker_id,worker_name,worker_birth,worker_sung,worker_rank,worker_dpname,worker_yn) 
+    values(#{worker_id},#{worker_name},#{worker_birth},#{worker_sung},#{worker_rank},#{worker_dpname},#{worker_yn})
 </insert>
+<delete id="WorkerDelete">
+    delete from worker
+</delete>
+
 <select id="scheduleInfo" parameterType="ScheduleVO">
     select * from cal
 </select>

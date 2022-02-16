@@ -25,4 +25,22 @@ public class WorkerDAO {
 		session.close();
 		return list;
 	}
+	public int workerDelete() {
+		
+	SqlSession session = sqlSessionFactory.openSession();
+	int cnt = session.delete("WorkerDelete");
+	session.commit();
+	session.close();
+	
+	return cnt;
+	}
+	public int workerInsert(WorkerVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		int cnt = session.insert("WorkerInsert", vo);
+		session.commit();
+		session.close();
+		return cnt;
+	}
+	
+	
 }
