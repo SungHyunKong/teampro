@@ -22,6 +22,9 @@
 		<div class="section-body">
 				<div class="card">
 					<div class="card-header">
+					 <a href="#" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> 수정</a>
+					 <a href="#" class="btn btn-icon icon-left btn-danger"><i class="fas fa-times"></i> 삭제</a>
+					 <a href="#" class="btn btn-icon icon-left btn-success"><i class="fas fa-check"></i> 등록</a>
 					</div>
 					<div class="card-body">
 						<table class="table table-striped">
@@ -40,13 +43,13 @@
 
 								<c:forEach var="vo" items="${list}">
 									<tr>
-										<th scope="row">1</th>
 										<td>${vo.worker_id}</td>
 										<td>${vo.worker_name}</td>
 										<td>${vo.worker_birth}</td>
 										<td>${vo.worker_sung}</td>
 										<td>${vo.worker_rank}</td>
 										<td>${vo.worker_dpname}</td>
+										<td>${vo.worker_yn}</td>
 									</tr>
 								</c:forEach>
 
