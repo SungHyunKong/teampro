@@ -28,14 +28,14 @@ public class BoardMemberFrontController extends HttpServlet {
 		
 		if(command.equals("/memberLogin.me")) {
 			forward=new ActionForward();
-			forward.setPath("/dist/member/loginForm.jsp");
+			forward.setPath("/loginForm.jsp");
 			forward.setRedirect(false);
 		} else if(command.equals("/memberLoginAction.me")) {
 			action=new MemberLoginAction();
 			forward=action.execute(request, response);
 		} else if(command.equals("/memberJoin.me")) {
 			forward= new ActionForward();
-			forward.setPath("/dist/member/joinForm.jsp");
+			forward.setPath("/joinForm.jsp");
 			forward.setRedirect(false);
 		} else if (command.equals("/memberJoinAction.me")) {
 			action=new MemberJoinAction();
@@ -66,7 +66,7 @@ public class BoardMemberFrontController extends HttpServlet {
 				response.sendRedirect(forward.getPath());
 			} else {
 				RequestDispatcher rd=request.getRequestDispatcher(forward.getPath());
-				//System.out.println(forward.getPath());
+				System.out.println(forward.getPath());
 				rd.forward(request, response);
 			}
 		}

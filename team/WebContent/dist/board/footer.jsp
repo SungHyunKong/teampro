@@ -26,39 +26,18 @@
 <link rel="stylesheet" href="${ctp}/dist/assets/css/style.css">
 <link rel="stylesheet" href="${ctp}/dist/assets/css/components.css">
 <!-- Start GA -->
-<script src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
+<script async
+	src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
 <!-- /END GA -->
 </head>
 
 <body>
-	<div class="main-sidebar sidebar-style-2">
-				<aside id="sidebar-wrapper">
-					<div class="sidebar-brand">
-						<a href="${ctp}/main.jsp">남성호르몬</a>
-					</div>
-					<div class="sidebar-brand sidebar-brand-sm">
-						<a href="${ctp}/main.jsp">TS</a>
-					</div>
-					<ul class="sidebar-menu">
-						<li class=active><a class="nav-link" href="${ctp}/worker.do"><i
-								class="far fa-square"></i> <span>사원관리</span></a></li>
-					</ul>
-					<ul class="sidebar-menu">
-						<li class=active><a class="nav-link" href="${ctp}/workertime.do"><i
-								class="far fa-square"></i> <span>근태관리</span></a></li>
-					</ul>
-					<ul class="sidebar-menu">
-						<li class=active><a class="nav-link" href="${ctp}/pay.jsp"><i
-								class="far fa-square"></i> <span>전자결제</span></a></li>
-					</ul>
-					<ul class="sidebar-menu">
-						<li class=active><a class="nav-link" href="${ctp}/boardList.bo"><i
-								class="far fa-square"></i> <span>질문게시판</span></a></li>
-					</ul>
+			<footer class="main-footer">
+				<div class="footer-left">2022 &copy; 4조 남성호르몬 테스토스테론</div>
+				<div class="footer-right"></div>
+			</footer>
 
-				</aside>
-			</div>
-<!-- General JS Scripts -->
+	<!-- General JS Scripts -->
 	<script src="${ctp}/dist/assets/modules/jquery.min.js"></script>
 	<script src="${ctp}/dist/assets/modules/popper.js"></script>
 	<script src="${ctp}/dist/assets/modules/tooltip.js"></script>

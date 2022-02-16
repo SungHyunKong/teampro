@@ -29,7 +29,7 @@ public class BoardFrontController  extends HttpServlet{
 			forward=action.execute(request, response);
 		} else if(command.equals("/boardWrite.bo")) {
 			forward=new ActionForward();
-			forward.setPath("/dist/board/board_write.jsp");
+			forward.setPath("/board_write.jsp");
 			forward.setRedirect(false);
 		} else if(command.equals("/boardAddAction.bo")) {
 			action= new BoardAddAction();

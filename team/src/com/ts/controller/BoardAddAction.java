@@ -21,11 +21,11 @@ public class BoardAddAction implements Action{
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String realFolder="";
-		String saveFolder="/dist/boardUpload";
+		String saveFolder="/boardUpload";
 		int fileSize=5*1024*1024;
 		ServletContext context=request.getServletContext();
 		realFolder=context.getRealPath(saveFolder);
-		//System.out.println(realFolder);
+		System.out.println(realFolder);
 		
 		MultipartRequest multi=new MultipartRequest(request, realFolder, fileSize, "utf-8", new DefaultFileRenamePolicy());
 		

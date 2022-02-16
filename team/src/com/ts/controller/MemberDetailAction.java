@@ -22,11 +22,11 @@ public class MemberDetailAction implements Action{
 		BoardMemberDAO dao= new BoardMemberDAO();
 		BoardMemberDTO dto= dao.getDetailMember(member_id);
 		request.setAttribute("dto", dto);
-		
+		request.setAttribute("id", member_id);
 		ActionForward forward=new ActionForward();
-		forward.setPath("/dist/member/member_detailForm.jsp");
+		
+		forward.setPath("/member_detailForm.jsp");
 		forward.setRedirect(false);
-	
 		return forward;
 	}
 
