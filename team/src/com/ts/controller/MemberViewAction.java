@@ -39,7 +39,7 @@ public class MemberViewAction implements Action{
 			BoardMemberDAO dao= new BoardMemberDAO();
 			BoardMemberDTO dto=dao.getDetailMember(member_id);
 			request.setAttribute("dto", dto);
-			forward.setPath("/dist/member/member_info.jsp");
+			forward.setPath("/member_info.jsp");
 			forward.setRedirect(false);
 			
 			return forward;

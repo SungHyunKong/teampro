@@ -23,7 +23,7 @@ public class BoardListAction implements Action{
 		
 		QaBoardDAO dao=new QaBoardDAO();
 		int listCount =dao.getListCount();
-		System.out.println("listCount: " + listCount);
+		//System.out.println("listCount: " + listCount);
 		
 		int page=1;
 		int limit=10;

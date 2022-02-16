@@ -33,4 +33,38 @@
 <!-- <update id="memberUpdate" parameterType="memberVO"> -->
 <!-- update member set age=#{age}, email=#{email},phone=#{phone} where num=#{num}     -->
 <!-- </update> -->
+
+<!-- 회원 관리 -->
+	<insert id="joinMember" parameterType="BoardMemberDTO">
+	    insert into member(member_id, member_pw, member_name, member_birth, member_gender, member_email) 
+	    values(#{member_id}, #{member_pw}, #{member_name}, #{member_birth}, #{member_gender}, #{member_email})
+	</insert>
+	<select id="isMember" parameterType="String" resultType="String">
+	    select member_pw from member where member_id=#{member_id}
+	</select>
+	<select id="getAllMember" resultType="BoardMemberDTO">
+	    select * from member
+	</select>
+	<delete id="deleteMember" parameterType="String">
+	    delete from member where member_id=#{member_id}
+	</delete>
+	<select id="getDetailMember" parameterType="String" resultType="BoardMemberDTO">
+	    select * from member where member_id=#{member_id}
+	</select>
+	<select id="getMember_pw" parameterType="String" resultType="String">
+	    select member_pw from member where member_id=#{member_pw}
+	</select>
+	<update id="updateMember" parameterType="BoardMemberDTO">
+	    update member set member_pw=#{member_pw}, member_name=#{member_name}, member_birth=#{member_birth}, member_gender=#{member_gender}, member_email=#{member_email}
+	    where member_id=#{member_id}
+	</update>
+	
+	<!-- 질문 게시판 -->
+	<!--  <insert id="boardInsert" parameterMap="map">
+	    insert into qa(qa_num, qa_id, qa_subject, qa_content, qa_file, qa_re_ref, qa_re_lev, qa_re_seq, qa_readcount, qa_date) 
+	    values(#{map.get(dto)}, #{qa_id}, #{qa_subject}, #{qa_content}, #{qa_file}, #{qa_re_ref}, #{qa_re_lev}, #{qa_re_seq}, #{qa_readcount}, #{now()})
+	</insert>
+	<select id="getMaxQa_num" parameterType="QaBoardDTO" resultType="Integer">
+	    select max(qa_num) from qa
+	</select>-->
 </mapper>
