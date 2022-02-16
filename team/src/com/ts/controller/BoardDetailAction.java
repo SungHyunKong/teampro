@@ -28,7 +28,7 @@ public class BoardDetailAction implements Action {
 		request.setAttribute("dto", dto);
 		
 		ActionForward forward = new ActionForward();
-		forward.setPath("/dist/board/board_view.jsp");
+		forward.setPath("/board_view.jsp");
 		forward.setRedirect(false);
 		return forward;
 	}

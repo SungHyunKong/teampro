@@ -32,7 +32,7 @@ public class BoardModifyView implements Action {
 			request.setAttribute("dto", dto);
 			
 			ActionForward forward = new ActionForward();
-			forward.setPath("/dist/board/board_modify.jsp");
+			forward.setPath("/board_modify.jsp");
 			forward.setRedirect(false);
 			return forward;
 		}

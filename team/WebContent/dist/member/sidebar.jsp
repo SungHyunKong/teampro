@@ -32,50 +32,29 @@
 
 <body>
 	<div class="main-sidebar sidebar-style-2">
-		<aside id="sidebar-wrapper">
-			<div class="sidebar-brand">
-				<a href="${ctp}/dist/main.jsp">남성호르몬</a>
-			</div>
-			<div class="sidebar-brand sidebar-brand-sm">
-				<a href="${ctp}/dist/index.html">TS</a>
-			</div>
-			<ul class="sidebar-menu">
-				<li class=active><a class="nav-link"
-					href="${ctp}/dist/worker.jsp"><i class="far fa-square"></i> <span>사원관리</span></a></li>
-			</ul>
-			<ul class="sidebar-menu">
-				<li class=active><a class="nav-link"
-					href="${ctp}/dist/workertime.jsp"><i class="far fa-square"></i>
-						<span>근태관리</span></a></li>
-			</ul>
+				<aside id="sidebar-wrapper">
+					<div class="sidebar-brand">
+						<a href="${ctp}/main.jsp">남성호르몬</a>
+					</div>
+					<div class="sidebar-brand sidebar-brand-sm">
+						<a href="${ctp}/main.jsp">TS</a>
+					</div>
+					<ul class="sidebar-menu">
+						<li class=active><a class="nav-link" href="${ctp}/worker.do"><i
+								class="far fa-square"></i> <span>사원관리</span></a></li>
+					</ul>
+					<ul class="sidebar-menu">
+						<li class=active><a class="nav-link" href="${ctp}/workertime.do"><i
+								class="far fa-square"></i> <span>근태관리</span></a></li>
+					</ul>
+					<ul class="sidebar-menu">
+						<li class=active><a class="nav-link" href="${ctp}/pay.jsp"><i
+								class="far fa-square"></i> <span>전자결제</span></a></li>
+					</ul>
 
-		</aside>
-	</div>
-	
-	
-	<div class="main-content" style="min-height: 842px;">
-	<div class="row">
-		<form action="memberLoginAction.me" method="post">
-			<table class="table table-striped" border="1">
-				<tr>
-					<th>아이디</th>
-					<td><input type="text" name="member_id" /></td>
-				</tr>
-				<tr>
-					<th>비밀번호</th>
-					<td><input type="password" name="member_pw" /></td>
-				</tr>
-				<tr>
-					<td colspan="2" align="center"><input type="submit"
-						value="로그인" /> <input type="button" value="회원가입"
-						onclick="location.href='memberJoin.me'" />
-					</td>
-				</tr>
-			</table>
-		</form>
-		</div>
-	</div>
-	<!-- General JS Scripts -->
+				</aside>
+			</div>
+<!-- General JS Scripts -->
 	<script src="${ctp}/dist/assets/modules/jquery.min.js"></script>
 	<script src="${ctp}/dist/assets/modules/popper.js"></script>
 	<script src="${ctp}/dist/assets/modules/tooltip.js"></script>

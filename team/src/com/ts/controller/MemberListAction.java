@@ -38,7 +38,7 @@ public class MemberListAction implements Action{
 			list=dao.getAllMember();
 			
 			request.setAttribute("list", list);
-			forward.setPath("/dist/member/member_list.jsp");
+			forward.setPath("/member_list.jsp");
 			forward.setRedirect(false);
 			return forward;
 		}

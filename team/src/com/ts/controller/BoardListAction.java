@@ -55,7 +55,7 @@ public class BoardListAction implements Action{
 			forward.setRedirect(true);
 			return forward;
 		}
-		forward.setPath("/dist/board/board_list.jsp");
+		forward.setPath("/board_list.jsp");
 		forward.setRedirect(false);
 		return forward;
 	}
