@@ -57,6 +57,25 @@ public class WorkerVO {
 	public final void setWorker_yn(String worker_yn) {
 		this.worker_yn = worker_yn;
 	}
+	
+	public WorkerVO() {
+		
+	}
+	
+	
+	
+	public WorkerVO( String worker_id, String worker_name, String worker_birth, String worker_sung,
+			String worker_rank, String worker_dpname, String worker_yn) {
+		super();
+		this.worker_id = worker_id;
+		this.worker_name = worker_name;
+		this.worker_birth = worker_birth;
+		this.worker_sung = worker_sung;
+		this.worker_rank = worker_rank;
+		this.worker_dpname = worker_dpname;
+		this.worker_yn = worker_yn;
+	}
+	
 	@Override
 	public String toString() {
 		return "WorkerVO [worker_code=" + worker_code + ", worker_id=" + worker_id + ", worker_name=" + worker_name

@@ -20,6 +20,10 @@
 	-moz-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
 	box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15)
 }
+.mb-7{
+	width: fit-content;
+	margin: auto;
+}
 </style>
 
 <body>
@@ -39,7 +43,7 @@
 						<div class="input-form-backgroud row">
 							<div class="input-form col-md-12 mx-auto">
 								<h4 class="mb-3">회원등록</h4>
-								<form action="workerInsert.do"  class="validation-form"  novalidate>
+								<form action="workerInsert.do"  class="validation-form" style="center" novalidate>
 									<div class="row">
 									<div class="col-md-6 mb-3">
 											<label for="nickname">아이디</label> <input type="text"
@@ -55,7 +59,7 @@
 									</div>
 									<div class="mb-3">
 										<label for="address">생년월일</label> <input type="text"
-											class="form-control" id="worker_birth" name="worker_birth" placeholder="e-mail" required>
+											class="form-control" id="worker_birth" name="worker_birth" placeholder="YYYY-MM-DD" required>
 										<div class="invalid-feedback">이메일을 입력하세요.</div>
 									</div>
 									<div class="row">
@@ -102,8 +106,10 @@
 											</select>
 										</div>
 									<hr class="mb-4">
-									<div class="mb-4"></div>
-									<input type="submit" value="전송" class="btn btn-success"/>
+									<div class="mb-7">
+									<input type="submit"  value="등록" onclick="" class="btn btn-success"/>
+									</div>
+
 								</form>
 							</div>
 						</div>

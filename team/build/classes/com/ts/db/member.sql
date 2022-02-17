@@ -17,15 +17,16 @@ ALTER TABLE `member`
 			`id` -- 아이디
 		);
 		
+desc worker;
 		
 select * from worker;
-
+select * from member;
 
    insert into worker(worker_id,worker_name,worker_birth,worker_sung,worker_rank,worker_dpname,worker_yn) 
     values("hkj","한광진","1998-11-07","남","부장","인사과","y");
 
 
-insert into member values("hkj","admin","한광진","남","1998-11-07","hkj@naver.com");
+insert into member values("sjs","admin1234","심준수","남","1998-09-18","sjs@naver.com");
 insert into worker(worker_id,worker_name,worker_birth,worker_sung,worker_rank,worker_dpname,worker_yn) values("hkj","한광진","1998-11-07","남","부장","인사과","y");
   
 

@@ -1,6 +1,8 @@
 package com.ts.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -15,8 +17,7 @@ public class WorkerInsertController implements Controller{
 	@Override
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-
+	
 		
 		String id=request.getParameter("worker_id");
 		String name=request.getParameter("worker_name");
@@ -34,20 +35,30 @@ public class WorkerInsertController implements Controller{
 		System.out.println(yn);
 		
 		
-		WorkerVO vo=new WorkerVO();
-		vo.setWorker_id(id);
-		vo.setWorker_name(name);
-		vo.setWorker_birth(birth);
-		vo.setWorker_sung(sung);
-		vo.setWorker_rank(rank);
-		vo.setWorker_dpname(dpname);
-		vo.setWorker_yn(yn);
-		System.out.println(id);
-		System.out.println(name);
+		
+		
 		
 		WorkerDAO dao=new WorkerDAO();
-		int cnt=dao.workerInsert(vo);
-		return "worker";
+		List<WorkerVO> list=dao.WorkerList();
+		int cnt = 0;
+		System.out.println(list);
+		if(list.size() == 0) {
+			WorkerVO vo=new WorkerVO(id,name,birth,sung,rank,dpname,yn);
+			cnt = dao.workerInsert(vo);
+		}else {
+			for (int i = 0; i < list.size(); i++) {
+				if(id.equals(list.get(i).getWorker_id())) {
+					return "redirect:worker.do?fail=1";
+				}else {
+					WorkerVO vo=new WorkerVO(id,name,birth,sung,rank,dpname,yn);
+					cnt = dao.workerInsert(vo);
+				}
+			}
+		}
+		
+		
+		
+		return "redirect:worker.do";
 	}
 
 }

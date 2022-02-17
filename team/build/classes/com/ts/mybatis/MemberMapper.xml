@@ -15,10 +15,13 @@
     insert into worker(worker_id,worker_name,worker_birth,worker_sung,worker_rank,worker_dpname,worker_yn) 
     values(#{worker_id},#{worker_name},#{worker_birth},#{worker_sung},#{worker_rank},#{worker_dpname},#{worker_yn})
 </insert>
-<delete id="WorkerDelete">
-    delete from worker
+<delete id="WorkerDelete" parameterType="WorkerVO">
+    delete from worker where worker_id=#{worker_id}
 </delete>
-
+<update id="WorkerUpdate">
+	update worker set worker_id=#{worker_id} , worker_name=#{worker_name} ,worker_birth=#{worker_birth} , worker_sung=#{worker_sung}, worker_rank=#{worker_rank},
+	worker_dpname=#{worker_dpname} , worker_yn=#{worker_yn}
+</update>
 <select id="scheduleInfo" parameterType="ScheduleVO">
     select * from cal
 </select>

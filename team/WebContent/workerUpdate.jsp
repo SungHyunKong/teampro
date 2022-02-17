@@ -20,6 +20,10 @@
 	-moz-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
 	box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15)
 }
+.mb-7{
+	width: fit-content;
+	margin: auto;
+}
 </style>
 
 <body>
@@ -39,40 +43,26 @@
 						<div class="input-form-backgroud row">
 							<div class="input-form col-md-12 mx-auto">
 								<h4 class="mb-3">회원수정</h4>
-								<form class="validation-form" novalidate>
+								<form class="validation-form" action="workerUpdate.do" novalidate>
 									<div class="row">
 										<div class="col-md-6 mb-3">
-											<label for="name">이름</label> <input type="text"
-												class="form-control" id="name" placeholder="Name" value="${vo.worker_name}"
-												required>
-											<div class="invalid-feedback">이름을 입력해주세요.</div>
+											<label for="name">아이디</label> 
+											<input type="text"class="form-control" id="worker_input_id" name="worker_id" placeholder="ID" required>
 										</div>
 										<div class="col-md-6 mb-3">
-											<label for="nickname">아이디</label> <input type="text"
-												class="form-control" id="nickname" placeholder="ID" value=""
-												required>
+											<label for="nickname">이름</label> <input type="text"
+												class="form-control" id="worker_input_name" name="worker_name" placeholder="Name" required>
 										</div>
 									</div>
-									<div class="row">
-										<div class="col-md-6 mb-3">
-											<label for="email">비밀번호</label> <input type="password"
-												class="form-control" id="password" placeholder="" required>
-										</div>
-										<div class="col-md-6 mb-3">
-											<label for="email">비밀번호 확인</label> <input type="password"
-												class="form-control" id="passwordCheck" placeholder=""
-												required>
-										</div>
-									</div>
-									<div class="mb-3">
-										<label for="address">e-mail</label> <input type="email"
-											class="form-control" id="email" placeholder="e-mail" required>
+										<div class="mb-3">
+										<label for="address">생년월일</label> 
+										<input type="text" class="form-control" id="worker_input_birth" name="worker_birth" placeholder="YYYY-MM-DD" required>
 										<div class="invalid-feedback">이메일을 입력하세요.</div>
 									</div>
 									<div class="row">
 										<div class="col-md-2 mb-3">
 											<label for="root">성별</label> <select
-												class="custom-select d-block w-100" id="gender">
+												class="custom-select d-block w-100" id="worker_input_sung" name="worker_sung">
 												<option value=""></option>
 												<option>남자</option>
 												<option>여자</option>
@@ -80,7 +70,7 @@
 										</div>
 										<div class="col-md-2 mb-3">
 											<label for="root">직급</label> <select
-												class="custom-select d-block w-100" id="rank">
+												class="custom-select d-block w-100" id="worker_input_rank" name="worker_rank">
 												<option value=""></option>
 												<option>부사장</option>
 												<option>전무</option>
@@ -101,13 +91,21 @@
 									</div>
 									<div class="mb-3">
 										<label for="address2">부서명<span class="text-muted">
-										</span></label> <input type="text" class="form-control" id="dpname"
+										</span></label> <input type="text" class="form-control" id="worker_input_dpname" name="worker_dpname"
 											placeholder="">
 									</div>
+									<div class="col-md-2 mb-3">
+											<label for="root">권한</label> <select
+												class="custom-select d-block w-100" id="worker_input_yn" name="worker_yn">
+												<option value=""></option>
+												<option>y</option>
+												<option>n</option>
+											</select>
+										</div>
 									<hr class="mb-4">
-									<div class="mb-4"></div>
-									<button class="btn btn-primary btn-lg btn-block" type="button" onclick="location.href='update.do'">수정
-										완료</button>
+									<div class="mb-7">
+									<input type="submit"  value="변경" onclick="" class="btn btn-success"/>
+									</div>
 								</form>
 							</div>
 						</div>

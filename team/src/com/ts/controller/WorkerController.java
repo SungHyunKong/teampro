@@ -17,7 +17,7 @@ public class WorkerController implements Controller{
 		WorkerDAO dao=new WorkerDAO();
 		List<WorkerVO> list=dao.WorkerList();
 		request.setAttribute("list", list);
-		
+	
 		return "worker";
 	}
 	
