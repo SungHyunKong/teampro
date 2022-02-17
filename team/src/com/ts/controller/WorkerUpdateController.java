@@ -18,7 +18,6 @@ public class WorkerUpdateController implements Controller{
 		String ctp=request.getContextPath();
 		
 		request.setCharacterEncoding("utf-8");
-		String worker_id=request.getParameter("worker_id");
 		String worker_name=request.getParameter("worker_name");
 		String worker_birth=request.getParameter("worker_birth");
 		String worker_sung=request.getParameter("worker_sung");
@@ -27,7 +26,6 @@ public class WorkerUpdateController implements Controller{
 		String worker_yn=request.getParameter("worker_yn");
 		
 		WorkerVO vo=new WorkerVO();
-		vo.setWorker_id(worker_id);
 		vo.setWorker_name(worker_name);
 		vo.setWorker_birth(worker_birth);
 		vo.setWorker_sung(worker_sung);

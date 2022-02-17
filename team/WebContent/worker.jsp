@@ -3,12 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-<script>
+	<script>
 	$(function(){
 		if(${param.fail  == 1}){
 			alert("등록 실패");
@@ -26,9 +27,6 @@
 		}
 	})
 	}); 
-	
-	
-	
 	function clickEvent(event) {
 		var id="";
 		console.log('target :: ',$(event.target));
@@ -47,6 +45,16 @@
 			alert("111");
 			location.href = "workerDelete.do?worker_id="+$('#worker_id').val();
 		});
+		$("#workerUpdate").click(function(){
+			alert("111");
+			location.href = "workerUpdate.jsp?worker_id="+$('#worker_id').val()+"&worker_name="+$('#worker_name').val()+"&worker_birth="+$('#worker_birth').val()
+					+"&worker_sung="+$('#worker_sung').val()+"&worker_rank="+$('#worker_rank').val()+"&worker_dpname="+$('#worker_dpname').val()+"&worker_yn="+$('#worker_yn').val();
+		});
+	
+		
+
+
+	
 	}
 	</script>
 	<div id="app">
@@ -64,13 +72,13 @@
 					<div class="section-body">
 						<div class="card">
 							<div class="card-header">
-								<a href="workerUpdate.jsp"
-									class="btn btn-icon icon-left btn-primary"><i
-									class="far fa-edit"></i> 수정</a> 
-									<a class="btn btn-icon icon-left btn-danger" id="worker_delete">
-									<i class="fas fa-times"></i> 삭제</a> 
-									<a href="workerInsert.jsp" class="btn btn-icon icon-left btn-success">
-									<i class="fas fa-check"></i> 등록</a>
+								<a id="workerUpdate" class="btn btn-icon icon-left btn-primary">
+								<i class="far fa-edit"></i> 수정</a> 
+								<a class="btn btn-icon icon-left btn-danger" id="worker_delete">
+									<i class="fas fa-times"></i> 삭제
+								</a> 
+								<a href="workerInsert.jsp" class="btn btn-icon icon-left btn-success"> <i class="fas fa-check"></i> 등록
+								</a>
 							</div>
 							<div class="card-body">
 								<table class="table table-striped">
@@ -89,15 +97,30 @@
 									<tbody>
 										<c:forEach var="vo" items="${list}">
 											<tr>
-												<td id= "worker_td_id">${vo.worker_id}</td>
-												<td>${vo.worker_name}</td>
-												<td>${vo.worker_birth}</td>
-												<td>${vo.worker_sung}</td>
-												<td>${vo.worker_rank}</td>
-												<td>${vo.worker_dpname}</td>
-												<td>${vo.worker_yn}</td>
-												<td><input type="checkbox" name="worker_checkbox" class = "worker_class"
-													value="${vo.worker_id}" id="worker_id" class="checkBox"></td>
+												<td id="worker_td_id">
+												<input type="hidden"value="${vo.worker_id}" id="worker_id">${vo.worker_id}
+												</td>
+												<td id="worker_td_name">
+												<input type="hidden"value="${vo.worker_name}" id="worker_name">${vo.worker_name}
+												</td>
+												<td id="worker_td_birth">
+												<input type="hidden"value="${vo.worker_birth}" id="worker_birth">${vo.worker_birth}
+												</td>
+												<td id="worker_td_sung">
+												<input type="hidden"value="${vo.worker_sung}" id="worker_sung">${vo.worker_sung}
+												</td>
+												<td id="worker_td_rank">
+												<input type="hidden"value="${vo.worker_rank}" id="worker_rank">${vo.worker_rank}
+												</td>
+												<td id="worker_td_dpname">
+												<input type="hidden"value="${vo.worker_dpname}" id="worker_dpname">${vo.worker_dpname}
+												</td>
+												<td id="worker_td_yn">
+												<input type="hidden"value="${vo.worker_yn}" id="worker_yn">${vo.worker_yn}
+												</td>
+
+												<td><input type="checkbox" name="worker_checkbox"
+													class="worker_class" class="checkBox"></td>
 
 											</tr>
 										</c:forEach>
@@ -112,6 +135,6 @@
 			<%@include file="footer.jsp"%>
 		</div>
 	</div>
-	
+
 </body>
 </html>
