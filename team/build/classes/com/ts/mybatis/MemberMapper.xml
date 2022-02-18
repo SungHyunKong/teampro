@@ -61,6 +61,7 @@
 	    update member set member_pw=#{member_pw}, member_name=#{member_name}, member_birth=#{member_birth}, member_gender=#{member_gender}, member_email=#{member_email}
 	    where member_id=#{member_id}
 	</update>
+<!-- 일정관리 -->
 	
 	<!-- 질문 게시판 -->
 	<!--  <insert id="boardInsert" parameterMap="map">

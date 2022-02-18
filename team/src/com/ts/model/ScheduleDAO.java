@@ -13,7 +13,7 @@ public class ScheduleDAO {
 	private static SqlSessionFactory sqlSessionFactory;
 	static {
 		try {
-			String resource = "mybaties/config.xml";
+			String resource = "mybatis/config.xml";
 			InputStream inputStream = Resources.getResourceAsStream(resource);
 			
 			sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
@@ -25,6 +25,16 @@ public class ScheduleDAO {
 		SqlSession session = sqlSessionFactory.openSession();
 		List<ScheduleVO> list = session.selectList("scheduleInfo");
 		
+		
+		session.close();
 		return list;
+	}
+	public int scheduleInsert(ScheduleVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		int cnt = session.insert("scheduleInsert", vo);
+		
+		session.commit();
+		session.close();
+		return cnt;
 	}
 }

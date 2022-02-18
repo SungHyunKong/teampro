@@ -55,6 +55,10 @@
 						<li class=active><a class="nav-link" href="${ctp}/boardList.bo"><i
 								class="far fa-square"></i> <span>질문게시판</span></a></li>
 					</ul>
+					<ul class="sidebar-menu">
+						<li class=active><a class="nav-link" href="${ctp}/schedule.jsp"><i
+								class="far fa-square"></i> <span>일정관리</span></a></li>
+					</ul>
 
 				</aside>
 			</div>
