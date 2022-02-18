@@ -11,10 +11,11 @@ public class HandlerMapping {
 	
 		mappings.put("/memberInsert.do", new MemberInsertController());
 		mappings.put("/Schedule.do", new ScheduleController());
-//		mappings.put("/memberRegister.do", new MemberRegisterController());
-//		mappings.put("/memberContent.do", new MemberContentController());
-//		mappings.put("/memberUpdate.do", new MemberUpdateController());
-//		mappings.put("/memberDelete.do", new MemberDeleteController());
+		mappings.put("/worker.do", new WorkerController());
+		mappings.put("/workertime.do", new WorkerTimeListController());
+		mappings.put("/workerDelete.do", new WorkerDeleteController());
+		mappings.put("/workerInsert.do", new WorkerInsertController());
+		mappings.put("/workerUpdate.do", new WorkerUpdateController());
 	}
 	
 	public Controller getController(String command) {

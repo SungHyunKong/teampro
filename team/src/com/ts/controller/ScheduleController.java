@@ -1,3 +1,4 @@
+
 package com.ts.controller;
 
 import java.io.IOException;
@@ -15,17 +16,29 @@ import com.ts.model.ScheduleVO;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+<<<<<<< HEAD
 import org.json.simple.JSONArray;
 public class ScheduleController implements Controller{
 	
 	@SuppressWarnings("unchecked")
+=======
+
+public class ScheduleController implements Controller {
+
+>>>>>>> branch 'main' of https://github.com/SungHyunKong/teampro.git
 	@Override
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+<<<<<<< HEAD
 		
 		ScheduleDAO dao = new ScheduleDAO();
 		
 		List<ScheduleVO> list= dao.scheduleInfo();
+=======
+		ScheduleDAO dao = new ScheduleDAO();
+		List<ScheduleVO> schedule = dao.scheduleInfo();
+
+>>>>>>> branch 'main' of https://github.com/SungHyunKong/teampro.git
 		JSONObject obj = new JSONObject();
 		JSONArray title = new JSONArray();
 		JSONArray start = new JSONArray();
@@ -37,9 +50,17 @@ public class ScheduleController implements Controller{
 		}
 		
 		try {
+<<<<<<< HEAD
 			obj.put("title", title);
 			obj.put("start", start);
 			obj.put("end", end);
+=======
+			for (int i = 0; i < schedule.size(); i++) {
+				obj.put("title", schedule.get(i).getTitle());
+				obj.put("start", schedule.get(i).getStart1());
+				obj.put("end", schedule.get(i).getEnd1());
+			}
+>>>>>>> branch 'main' of https://github.com/SungHyunKong/teampro.git
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -48,4 +69,3 @@ public class ScheduleController implements Controller{
 		return null;
 	}
 }
-

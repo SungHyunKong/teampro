@@ -34,22 +34,26 @@
 	<div class="main-sidebar sidebar-style-2">
 				<aside id="sidebar-wrapper">
 					<div class="sidebar-brand">
-						<a href="${ctp}/dist/main.jsp">남성호르몬</a>
+						<a href="${ctp}/main.jsp">남성호르몬</a>
 					</div>
 					<div class="sidebar-brand sidebar-brand-sm">
-						<a href="${ctp}/dist/index.html">TS</a>
+						<a href="${ctp}/main.jsp">TS</a>
 					</div>
 					<ul class="sidebar-menu">
-						<li class=active><a class="nav-link" href="${ctp}/dist/worker.jsp"><i
+						<li class=active><a class="nav-link" href="${ctp}/worker.do"><i
 								class="far fa-square"></i> <span>사원관리</span></a></li>
 					</ul>
 					<ul class="sidebar-menu">
-						<li class=active><a class="nav-link" href="${ctp}/dist/workertime.jsp"><i
+						<li class=active><a class="nav-link" href="${ctp}/workertime.do"><i
 								class="far fa-square"></i> <span>근태관리</span></a></li>
 					</ul>
 					<ul class="sidebar-menu">
-						<li class=active><a class="nav-link" href="${ctp}/dist/pay.jsp"><i
+						<li class=active><a class="nav-link" href="${ctp}/pay.jsp"><i
 								class="far fa-square"></i> <span>전자결제</span></a></li>
+					</ul>
+					<ul class="sidebar-menu">
+						<li class=active><a class="nav-link" href="${ctp}/boardList.bo"><i
+								class="far fa-square"></i> <span>질문게시판</span></a></li>
 					</ul>
 
 				</aside>
