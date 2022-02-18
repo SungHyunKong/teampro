@@ -64,11 +64,32 @@
 <!-- 일정관리 -->
 	
 	<!-- 질문 게시판 -->
-	<!--  <insert id="boardInsert" parameterMap="map">
-	    insert into qa(qa_num, qa_id, qa_subject, qa_content, qa_file, qa_re_ref, qa_re_lev, qa_re_seq, qa_readcount, qa_date) 
-	    values(#{map.get(dto)}, #{qa_id}, #{qa_subject}, #{qa_content}, #{qa_file}, #{qa_re_ref}, #{qa_re_lev}, #{qa_re_seq}, #{qa_readcount}, #{now()})
+	<insert id="boardInsert" parameterType="QaBoardDTO">
+	    <selectKey keyProperty="qa_num" resultType="Integer" order="BEFORE">
+	        select max(qa_num)+1 from qa
+	    </selectKey>
+	    insert into qa(qa_num, qa_id, qa_subject, qa_content, qa_file, qa_re_ref, qa_re_lev, qa_re_seq, qa_readcount, qa_date)
+	    values (#{qa_num},#{qa_id},#{qa_subject},#{qa_content},#{qa_file},#{qa_num},#{qa_re_lev},#{qa_re_seq},#{qa_readcount},now())
 	</insert>
-	<select id="getMaxQa_num" parameterType="QaBoardDTO" resultType="Integer">
-	    select max(qa_num) from qa
-	</select>-->
+	<select id="getListCount" resultType="Integer">
+	    select count(*) from qa
+	</select>
+	<select id="getBoardList" parameterType="Integer" resultType="QaBoardDTO">
+	    select * from qa order by qa_re_ref desc, qa_re_seq asc limit #{startRow}, 10
+	</select>
+	<select id="getDetail" parameterType="Integer" resultType="QaBoardDTO">
+	    select * from qa where qa_num=#{qa_num}
+	</select>
+	<update id="readCount" parameterType="QaBoardDTO">
+	    update qa set qa_readcount=#{qa_readcount}+1 where qa_num=#{qa_num}
+	</update>
+	<select id="isBoardWriter" parameterType="QaBoardDTO" resultType="QaBoardDTO">
+	    select * from qa where qa_num=#{qa_num}
+	</select>
+	<delete id="boardDelete" parameterType="Integer">
+	    delete from qa where qa_num=#{qa_num}
+	</delete>
+	<update id="boardUpdate" parameterType="QaBoardDTO">
+	    update qa set qa_subject=#{qa_subject}, qa_content=#{qa_content} where qa_num=#{qa_num}
+	</update>
 </mapper>
