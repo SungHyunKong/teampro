@@ -66,7 +66,7 @@
 	<!-- 질문 게시판 -->
 	<insert id="boardInsert" parameterType="QaBoardDTO">
 	    <selectKey keyProperty="qa_num" resultType="Integer" order="BEFORE">
-	        select max(qa_num)+1 from qa
+	        select ifnull(max(qa_num)+1, 1) from qa;
 	    </selectKey>
 	    insert into qa(qa_num, qa_id, qa_subject, qa_content, qa_file, qa_re_ref, qa_re_lev, qa_re_seq, qa_readcount, qa_date)
 	    values (#{qa_num},#{qa_id},#{qa_subject},#{qa_content},#{qa_file},#{qa_num},#{qa_re_lev},#{qa_re_seq},#{qa_readcount},now())
