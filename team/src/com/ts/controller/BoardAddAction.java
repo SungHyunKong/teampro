@@ -30,11 +30,11 @@ public class BoardAddAction implements Action{
 		MultipartRequest multi=new MultipartRequest(request, realFolder, fileSize, "utf-8", new DefaultFileRenamePolicy());
 		
 		QaBoardDTO dto= new QaBoardDTO();
-		dto.setBoard_id(multi.getParameter("board_id"));
-		dto.setBoard_subject(multi.getParameter("board_subject"));
-		dto.setBoard_content(multi.getParameter("board_content"));
+		dto.setQa_id(multi.getParameter("qa_id"));
+		dto.setQa_subject(multi.getParameter("qa_subject"));
+		dto.setQa_content(multi.getParameter("qa_content"));
 		//System.out.println(multi.getOriginalFileName((String) multi.getFileNames().nextElement()));
-		dto.setBoard_file(multi.getOriginalFileName((String) multi.getFileNames().nextElement()));
+		dto.setQa_file(multi.getOriginalFileName((String) multi.getFileNames().nextElement()));
 		
 		QaBoardDAO dao= new QaBoardDAO();
 		int succ=dao.boardInsert(dto);

@@ -2,6 +2,7 @@ package com.ts.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -31,7 +32,7 @@ public class BoardListAction implements Action{
 			page=Integer.parseInt(request.getParameter("page"));
 		}
 		
-		ArrayList<QaBoardDTO> list= new ArrayList<QaBoardDTO>();
+		List<QaBoardDTO> list= new ArrayList<QaBoardDTO>();
 		list=dao.getBoardList(page, limit);
 		
 		int maxPage=(int)((double)listCount/10 +0.95);

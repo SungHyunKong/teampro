@@ -41,7 +41,7 @@ if (id == null) {
 						<form action="boardAddAction.bo" method="post"
 			enctype="multipart/form-data" onsubmit="return fnSubmit()">
 			<!-- enctype : 파일 첨부할때 필요한 속성 -->
-			<input type="hidden" name="board_id" value="<%=id%>" />
+			<input type="hidden" name="qa_id" value="<%=id%>" />
 			<table class="table table-striped">
 				<tr>
 					<th>작성자</th>
@@ -49,16 +49,16 @@ if (id == null) {
 				</tr>
 				<tr>
 					<th>제목</th>
-					<td><input type="text" name="board_subject" maxlength="50"
+					<td><input type="text" name="qa_subject" maxlength="50"
 						required="required" /></td>
 				</tr>
 				<tr>
 					<th>내용</th>
-					<td><textarea rows="15" cols="70" name="board_content"></textarea></td>
+					<td><textarea rows="15" cols="70" name="qa_content"></textarea></td>
 				</tr>
 				<tr>
 					<th>파일 첨부</th>
-					<td><input type="file" name="board_file" /></td>
+					<td><input type="file" name="qa_file" /></td>
 				</tr>
 				<tr>
 					<td colspan="2" align="center"><input type="submit"

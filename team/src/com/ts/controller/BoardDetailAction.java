@@ -15,16 +15,17 @@ import com.ts.frontcontroller.ActionForward;
 public class BoardDetailAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int board_num = Integer.parseInt(request.getParameter("board_num"));
+		int qa_num = Integer.parseInt(request.getParameter("qa_num"));
 		HttpSession session = request.getSession();
 		String id = (String) session.getAttribute("id");
 		
 		QaBoardDAO dao = new QaBoardDAO();
-		QaBoardDTO dto = dao.getDetail(board_num);
-		if(!id.equals(dto.getBoard_id())) {	//작성자와 로그인 id가 같을경우 조회수가 증가하지 않음
-			dao.readCount(board_num);	//조회수 증가
+		QaBoardDTO dto = dao.getDetail(qa_num);
+		
+		if(!id.equals(dto.getQa_id())) {//작성자와 로그인 id가 같을경우 조회수가 증가하지 않음
+			dao.readCount(qa_num);	//조회수 증가
 		}
-		dto = dao.getDetail(board_num);	//증가한 조회수를 가져옴
+		dto = dao.getDetail(qa_num);	//증가한 조회수를 가져옴
 		request.setAttribute("dto", dto);
 		
 		ActionForward forward = new ActionForward();

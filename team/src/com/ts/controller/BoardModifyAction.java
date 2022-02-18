@@ -16,11 +16,11 @@ public class BoardModifyAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
-		int board_num = Integer.parseInt(request.getParameter("board_num"));
+		int qa_num = Integer.parseInt(request.getParameter("qa_num"));
 		QaBoardDTO dto = new QaBoardDTO();
-		dto.setBoard_num(board_num);
-		dto.setBoard_subject(request.getParameter("board_subject"));
-		dto.setBoard_content(request.getParameter("board_content"));
+		dto.setQa_num(qa_num);
+		dto.setQa_subject(request.getParameter("qa_subject"));
+		dto.setQa_content(request.getParameter("qa_content"));
 		
 		QaBoardDAO dao = new QaBoardDAO();
 		int succ = dao.boardUpdate(dto);
@@ -29,10 +29,10 @@ public class BoardModifyAction implements Action {
 		PrintWriter out = response.getWriter();
 		if(succ > 0) {
 			out.println("<script>alert('수정되었습니다!');");
-			out.println("location.href='boardDetailAction.bo?board_num=" + board_num + "';</script>");
+			out.println("location.href='boardDetailAction.bo?qa_num=" + qa_num + "';</script>");
 		} else {
 			out.println("<script>alert('수정 실패!');");
-			out.println("location.href='boardDetailAction.bo?board_num=" + board_num + "';</script>");
+			out.println("location.href='boardDetailAction.bo?qa_num=" + qa_num + "';</script>");
 		}
 		
 		return null;

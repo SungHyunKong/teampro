@@ -16,17 +16,17 @@ import com.ts.frontcontroller.ActionForward;
 public class BoardDeleteAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int board_num = Integer.parseInt(request.getParameter("board_num"));
+		int qa_num = Integer.parseInt(request.getParameter("qa_num"));
 		HttpSession session = request.getSession();
 		String id = (String) session.getAttribute("id");
 		
 		QaBoardDAO dao = new QaBoardDAO();
-		boolean result = dao.isBoardWriter(board_num, id);	//작성자 확인
+		boolean result = dao.isBoardWriter(qa_num, id);	//작성자 확인
 		
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();
 		if(id.equals("admin") || result == true) {
-			int succ = dao.boardDelete(board_num);
+			int succ = dao.boardDelete(qa_num);
 			if(succ > 0) {
 				out.println("<script>alert('삭제되었습니다!');");
 				out.println("location.href='boardList.bo';</script>");

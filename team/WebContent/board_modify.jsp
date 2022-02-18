@@ -29,24 +29,24 @@ QaBoardDTO dto = (QaBoardDTO) request.getAttribute("dto");
 					</div>
 					<div class="card-body">
 						<form action="boardModifyAction.bo" method="post">
-	<input type="hidden" name="board_num" value="<%=dto.getBoard_num()%>"/>
+	<input type="hidden" name="qa_num" value="<%=dto.getQa_num()%>"/>
 		<table class="table table-striped">
 			<tr>
 				<th>제목</th>
 				<td>
-					<input type="text" name="board_subject" value="<%=dto.getBoard_subject() %>" required="required"/>
+					<input type="text" name="qa_subject" value="<%=dto.getQa_subject() %>" required="required"/>
 				</td>
 			</tr>
 			<tr>
 				<th>내용</th>
 				<td>
-					<textarea rows="15" cols="50" name="board_content" required="required"><%=dto.getBoard_content() %></textarea>
+					<textarea rows="15" cols="50" name="qa_content" required="required"><%=dto.getQa_content() %></textarea>
 					<!-- textarea 태그 사이에서 들여쓰기를 하면 들여쓰기 만큼의 공백이 내용에 나와버린다. -->
 				</td>
 			</tr>
 			<tr>
 				<th>파일 첨부</th>
-				<td><input type="file" name="board file" value="<%=dto.getBoard_file() %>" /></td>
+				<td><input type="file" name="qa file" value="<%=dto.getQa_file() %>" /></td>
 			</tr>
 			<tr>
 				<td colspan="2" align="center">

@@ -16,19 +16,19 @@ import com.ts.frontcontroller.ActionForward;
 public class BoardModifyView implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int board_num = Integer.parseInt(request.getParameter("board_num"));
+		int qa_num = Integer.parseInt(request.getParameter("qa_num"));
 		HttpSession session = request.getSession();
 		String id = (String) session.getAttribute("id");
 		
 		QaBoardDAO dao = new QaBoardDAO();
-		boolean result = dao.isBoardWriter(board_num, id);	//작성자 확인
+		boolean result = dao.isBoardWriter(qa_num, id);	//작성자 확인
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();
 		if(result == false) {
 			out.println("<script>alert('수정 권한이 없습니다!');");
 			out.println("history.go(-1);</script>");
 		} else {
-			QaBoardDTO dto = dao.getDetail(board_num);
+			QaBoardDTO dto = dao.getDetail(qa_num);
 			request.setAttribute("dto", dto);
 			
 			ActionForward forward = new ActionForward();

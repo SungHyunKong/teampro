@@ -68,12 +68,12 @@ list = (ArrayList<QaBoardDTO>) request.getAttribute("list");
 										QaBoardDTO dto = list.get(i);
 									%>
 									<tr align="center">
-										<td><%=dto.getBoard_num()%></td>
+										<td><%=dto.getQa_num()%></td>
 										<td><a
-											href="boardDetailAction.bo?board_num=<%=dto.getBoard_num()%>"><%=dto.getBoard_subject()%></a></td>
-										<td><%=dto.getBoard_id()%></td>
-										<td><%=dto.getBoard_date().substring(0, 10)%></td>
-										<td><%=dto.getBoard_readcount()%></td>
+											href="boardDetailAction.bo?qa_num=<%=dto.getQa_num()%>"><%=dto.getQa_subject()%></a></td>
+										<td><%=dto.getQa_id()%></td>
+										<td><%=dto.getQa_date().substring(0, 10)%></td>
+										<td><%=dto.getQa_readcount()%></td>
 
 									</tr>
 									<%

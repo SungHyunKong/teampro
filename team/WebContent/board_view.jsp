@@ -3,7 +3,7 @@
 <%
 	String id = (String) (session.getAttribute("id"));
 QaBoardDTO dto = (QaBoardDTO) request.getAttribute("dto");
-String board_content = dto.getBoard_content();
+String board_content = dto.getQa_content();
 String replaceContent = board_content.replaceAll("\r\n", "<br>");
 %>
 <!DOCTYPE html>
@@ -14,13 +14,13 @@ String replaceContent = board_content.replaceAll("\r\n", "<br>");
 <script type="text/javascript">
 function fnUpdate(num) {
 	if(confirm("수정하시겠습니까?")) {
-		location.href = "boardModifyView.bo?board_num=" + num;
+		location.href = "boardModifyView.bo?qa_num=" + num;
 	}
 	return false;
 }
 function fnDelete(num) {
 	if(confirm("정말 삭제하시겠습니까?")) {
-		location.href = "boardDeleteAction.bo?board_num=" + num;
+		location.href = "boardDeleteAction.bo?qa_num=" + num;
 	}
 	return false;
 }
@@ -47,11 +47,11 @@ function fnDelete(num) {
 						<table class="table table-striped">
 		<tr>
 			<th>제목</th>
-			<td><%=dto.getBoard_subject() %></td>		
+			<td><%=dto.getQa_subject() %></td>		
 		</tr>
 		<tr>
 			<th>조회수</th>
-			<td><%=dto.getBoard_readcount() %></td>
+			<td><%=dto.getQa_readcount() %></td>
 		</tr>
 		<tr>
 			<th>내용</th>
@@ -60,17 +60,17 @@ function fnDelete(num) {
 		<tr>
 			<th>첨부 파일</th>
 			<td colspan="3" >
-				<%if(dto.getBoard_file() == null) { %>
+				<%if(dto.getQa_file() == null) { %>
 					첨부된 파일이 없습니다.
 				<%} else { %>
-					<a href="boardupload/<%=dto.getBoard_file()%>"><%=dto.getBoard_file() %></a>
+					<a href="boardUpload/<%=dto.getQa_file()%>"><%=dto.getQa_file() %></a>
 				<%} %>
 			</td>
 		</tr>
 		<tr align="center">
 			<td colspan="4">
-				<input type="button" value="수정하기" onclick="fnUpdate('<%=dto.getBoard_num() %>')" />
-				<input type="button" value="삭제하기" onclick="fnDelete('<%=dto.getBoard_num() %>')" />
+				<input type="button" value="수정하기" onclick="fnUpdate('<%=dto.getQa_num() %>')" />
+				<input type="button" value="삭제하기" onclick="fnDelete('<%=dto.getQa_num() %>')" />
 				<input type="button" value="목록보기" onclick="location.href='boardList.bo'"/>
 			</td>
 		</tr>
