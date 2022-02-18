@@ -30,7 +30,7 @@ public class MemberFrontController extends HttpServlet {
 		String ctp=request.getContextPath();
 //		System.out.println(ctp);
 		String command=uri.substring(ctp.length());
-		
+		System.out.println(command);
 		Controller controller=null;
 		String nextPage=null;
 		
@@ -38,7 +38,7 @@ public class MemberFrontController extends HttpServlet {
 		HandlerMapping mapp=new HandlerMapping();
 		controller=mapp.getController(command);
 		nextPage=controller.requestHandler(request, response);
-		
+		System.out.println(nextPage);
 		if(nextPage != null) {
 			if ( nextPage.indexOf("redirect:") != -1 ) {
 				//   redirect:/MVC04/memberList.do

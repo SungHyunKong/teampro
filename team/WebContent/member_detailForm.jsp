@@ -37,7 +37,7 @@ String ssid=(String)session.getAttribute("id");
 						<div class="card">
 							<div class="card-header"></div>
 							<div class="card-body">
-							<form action="memberUpdateAction.me" method="post" onsubmit="fnSubmit()">
+							<form action="memberUpdate.do" method="post" onsubmit="fnSubmit()">
 	                            <input type="hidden" name="member_id" value="<%=ssid%>" />
 								<table class="table table-striped">
 									<tr>

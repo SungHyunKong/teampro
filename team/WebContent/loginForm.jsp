@@ -23,7 +23,7 @@
 						<div class="card">
 							<div class="card-header"></div>
 							<div class="card-body">
-								<form action="memberLoginAction.me" method="post">
+								<form action="memberLogin.do" method="post">
 									<table class="table table-striped">
 										<tr>
 											<th>아이디</th>
@@ -36,7 +36,7 @@
 										<tr>
 											<td colspan="2" align="center"><input type="submit"
 												value="로그인" /> <input type="button" value="회원가입"
-												onclick="location.href='memberJoin.me'" /></td>
+												onclick="location.href='joinForm.jsp'" /></td>
 										</tr>
 									</table>
 								</form>

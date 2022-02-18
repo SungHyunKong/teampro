@@ -3,7 +3,7 @@
 <%
 	String id = (String) session.getAttribute("id");
 if (id == null) {
-	response.sendRedirect("memberLogin.me");
+	response.sendRedirect("memberLogin.do");
 }
 %>
 <!DOCTYPE html>
@@ -38,7 +38,7 @@ if (id == null) {
 					<div class="card-header">
 					</div>
 					<div class="card-body">
-						<form action="boardAddAction.bo" method="post"
+						<form action="boardAdd.do" method="post"
 			enctype="multipart/form-data" onsubmit="return fnSubmit()">
 			<!-- enctype : 파일 첨부할때 필요한 속성 -->
 			<input type="hidden" name="qa_id" value="<%=id%>" />
@@ -63,7 +63,7 @@ if (id == null) {
 				<tr>
 					<td colspan="2" align="center"><input type="submit"
 						value="글 등록" /> <input type="reset" value="다시 작성" /> <input
-						type="button" value="목록 보기" onclick="location.href='boardList.bo'" />
+						type="button" value="목록 보기" onclick="location.href='boardList.do'" />
 					</td>
 				</tr>
 			</table>

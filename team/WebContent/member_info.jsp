@@ -20,7 +20,7 @@ BoardMemberDTO dto = (BoardMemberDTO) request.getAttribute("dto");
 			<div class="main-content">
 				<section class="section">
 					<div class="section-header">
-						<h1>사원관리</h1>
+						<h1>회원관리</h1>
 					</div>
 
 					<!--  코드작성하시오  이 페이지는 건들지 마시오 -->
@@ -73,11 +73,11 @@ BoardMemberDTO dto = (BoardMemberDTO) request.getAttribute("dto");
 									<tr>
 										<td colspan="2" align="center"><input type="button"
 											value="회원 목록 보기"
-											onclick="location.href='memberListAction.me'" /> <input
+											onclick="location.href='memberList.do'" /> <input
 											type="button" value="게시판 보기"
-											onclick="location.href='boardList.bo'" /> <input
+											onclick="location.href='boardList.do'" /> <input
 											type="button" value="로그아웃"
-											onclick="location.href='memberLogout.me'" /></td>
+											onclick="location.href='memberLogout.do'" /></td>
 									</tr>
 								</table>
 							</div>

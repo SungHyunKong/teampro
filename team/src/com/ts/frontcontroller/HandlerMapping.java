@@ -16,6 +16,22 @@ public class HandlerMapping {
 		mappings.put("/workerDelete.do", new WorkerDeleteController());
 		mappings.put("/workerInsert.do", new WorkerInsertController());
 		mappings.put("/workerUpdate.do", new WorkerUpdateController());
+		mappings.put("/memberLogin.do", new MemberLoginController());
+		mappings.put("/memberLogout.do", new MemberLogoutController());
+		mappings.put("/memberJoinController.do", new MemberJoinController());
+		mappings.put("/memberList.do", new MemberListController());
+		mappings.put("/memberView.do", new MemberViewController());
+		mappings.put("/memberDetail.do", new MemberDetailController());
+		mappings.put("/memberDelete.do", new MemberDeleteController());
+		mappings.put("/memberUpdate.do", new MemberUpdateController());
+		
+		mappings.put("/boardList.do", new BoardListController());
+		mappings.put("/boardAdd.do", new BoardAddController());
+		mappings.put("/boardDetail.do", new BoardDetailController());
+		mappings.put("/boardModifyView.do", new BoardModifyViewController());
+		mappings.put("/boardModifyController.do", new BoardModifyController());
+		mappings.put("/boardDeleteController.do", new BoardDeleteController());
+		
 	}
 	
 	public Controller getController(String command) {

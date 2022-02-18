@@ -99,7 +99,7 @@
 								<i class="fas fa-cog"></i> Settings
 							</a>
 							<div class="dropdown-divider"></div>
-							<a href="memberLogin.me" class="dropdown-item has-icon text-danger"> <i
+							<a href="loginForm.jsp" class="dropdown-item has-icon text-danger"> <i
 								class="fas fa-sign-out-alt"></i> Login
 							</a>
 						</div></li>
@@ -160,7 +160,7 @@
 						
 						<div class="dropdown-menu dropdown-menu-right">
 							<div class="dropdown-title">로그인되었습니다</div>
-							<a href="memberDetailAction.me?member_id=<%=sid%>" class="dropdown-item has-icon">
+							<a href="memberDetail.do?member_id=<%=sid%>" class="dropdown-item has-icon">
 								<i class="far fa-user"></i> 정보 수정
 							</a> <a href="${ctp}/dist/features-activities.html"
 								class="dropdown-item has-icon"> <i class="fas fa-bolt"></i>
@@ -169,7 +169,7 @@
 								<i class="fas fa-cog"></i> Settings
 							</a>
 							<div class="dropdown-divider"></div>
-							<a href="memberLogout.me" class="dropdown-item has-icon text-danger"> <i
+							<a href="memberLogout.do" class="dropdown-item has-icon text-danger"> <i
 								class="fas fa-sign-out-alt"></i> Logout
 							</a>
 						</div></li>

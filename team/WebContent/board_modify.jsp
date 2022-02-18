@@ -28,7 +28,7 @@ QaBoardDTO dto = (QaBoardDTO) request.getAttribute("dto");
 					<div class="card-header">
 					</div>
 					<div class="card-body">
-						<form action="boardModifyAction.bo" method="post">
+						<form action="boardModifyController.do" method="post">
 	<input type="hidden" name="qa_num" value="<%=dto.getQa_num()%>"/>
 		<table class="table table-striped">
 			<tr>
@@ -53,7 +53,7 @@ QaBoardDTO dto = (QaBoardDTO) request.getAttribute("dto");
 					<input type="submit" value="수정하기" />
 					<input type="button" value="뒤로가기" onclick="history.back()"/>
 					<!-- back은 바로 이전, go(-1)은 안의 인수만큼 이동 -->
-					<input type= "button" value="목록보기" onclick="location.href='boardList.bo'" />
+					<input type= "button" value="목록보기" onclick="location.href='boardList.do'" />
 				</td>
 			</tr>
 		</table>

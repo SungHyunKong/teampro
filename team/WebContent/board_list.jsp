@@ -70,7 +70,7 @@ list = (ArrayList<QaBoardDTO>) request.getAttribute("list");
 									<tr align="center">
 										<td><%=dto.getQa_num()%></td>
 										<td><a
-											href="boardDetailAction.bo?qa_num=<%=dto.getQa_num()%>"><%=dto.getQa_subject()%></a></td>
+											href="boardDetail.do?qa_num=<%=dto.getQa_num()%>"><%=dto.getQa_subject()%></a></td>
 										<td><%=dto.getQa_id()%></td>
 										<td><%=dto.getQa_date().substring(0, 10)%></td>
 										<td><%=dto.getQa_readcount()%></td>
@@ -86,7 +86,7 @@ list = (ArrayList<QaBoardDTO>) request.getAttribute("list");
 												if (nowPage <= 1) {
 											%> [이전]&nbsp; <%
  	                                        } else {
-                                            %> <a href="boardList.bo?page=<%=nowPage - 1%>">[이전]</a>&nbsp; <%
+                                            %> <a href="boardList.do?page=<%=nowPage - 1%>">[이전]</a>&nbsp; <%
  	                                        }
                                             %> <%
  	                                        for (int i = startPage; i <= endPage; i++) {
@@ -94,7 +94,7 @@ list = (ArrayList<QaBoardDTO>) request.getAttribute("list");
  	                                        if (i == nowPage) {
                                              %> [<%=i%>]&nbsp; <%
  											} else {
- 											%> <a href="boardList.bo?page=<%=i%>">[<%=i%>]
+ 											%> <a href="boardList.do?page=<%=i%>">[<%=i%>]
 											</a>&nbsp; <%
  											}
  											%> <%
@@ -103,7 +103,7 @@ list = (ArrayList<QaBoardDTO>) request.getAttribute("list");
  											if (nowPage >= maxPage) {
 											 %> [다음]&nbsp; <%
  											} else {
-											 %> <a href="boardList.bo?page=<%=nowPage + 1%>">[다음]</a>&nbsp; <%
+											 %> <a href="boardList.do?page=<%=nowPage + 1%>">[다음]</a>&nbsp; <%
  											}
  											%>
 										</td>
@@ -114,11 +114,11 @@ list = (ArrayList<QaBoardDTO>) request.getAttribute("list");
 											<%
 												if (id != null && id.equals("admin")) {
 											%> <input type="button" value="회원 관리"
-											onclick="location.href='memberListAction.me'" /> <%
+											onclick="location.href='memberList.do'" /> <%
  											}
  											%> <input
 											type="button" value="글쓰기"
-											onclick="location.href='boardWrite.bo'" />
+											onclick="location.href='board_write.jsp'" />
 										</td>
 									</tr>
 								</table>

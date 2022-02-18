@@ -15,7 +15,7 @@
 <script type="text/javascript">
 	function fnDelete(member_id) {
 		if (confirm("정말 삭제하시겠습니까?")) {
-			location.href = 'memberDeleteAction.me?member_id=' + member_id;
+			location.href = 'memberDelete.do?member_id=' + member_id;
 		}
 	}
 </script>
@@ -47,7 +47,7 @@
 									<core:forEach var="i" items="${list }">
 										<tr>
 											<td><a
-												href="memberViewAction.me?member_id=${i.member_id }">${i.member_id }</a></td>
+												href="memberView.do?member_id=${i.member_id }">${i.member_id }</a></td>
 											<td>${i.member_name }</td>
 											<td align="left"><core:if
 													test="${i.member_id eq 'admin' }">삭제 금지</core:if> <core:if
@@ -60,9 +60,9 @@
 
 									<tr>
 										<td colspan="3"><input type="button" value="로그아웃"
-											onclick="location.href='memberLogout.me'" /> <input
+											onclick="location.href='memberLogout.do'" /> <input
 											type="button" value="게시판으로 이동"
-											onclick="location.href='boardList.bo'" /></td>
+											onclick="location.href='boardList.do'" /></td>
 									</tr>
 								</table>
 							</div>

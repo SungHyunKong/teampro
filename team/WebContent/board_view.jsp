@@ -14,13 +14,13 @@ String replaceContent = board_content.replaceAll("\r\n", "<br>");
 <script type="text/javascript">
 function fnUpdate(num) {
 	if(confirm("수정하시겠습니까?")) {
-		location.href = "boardModifyView.bo?qa_num=" + num;
+		location.href = "boardModifyView.do?qa_num=" + num;
 	}
 	return false;
 }
 function fnDelete(num) {
 	if(confirm("정말 삭제하시겠습니까?")) {
-		location.href = "boardDeleteAction.bo?qa_num=" + num;
+		location.href = "boardDeleteController.do?qa_num=" + num;
 	}
 	return false;
 }
@@ -71,7 +71,7 @@ function fnDelete(num) {
 			<td colspan="4">
 				<input type="button" value="수정하기" onclick="fnUpdate('<%=dto.getQa_num() %>')" />
 				<input type="button" value="삭제하기" onclick="fnDelete('<%=dto.getQa_num() %>')" />
-				<input type="button" value="목록보기" onclick="location.href='boardList.bo'"/>
+				<input type="button" value="목록보기" onclick="location.href='boardList.do'"/>
 			</td>
 		</tr>
 	</table>
