@@ -49,7 +49,7 @@ public class BoardMemberDAO {
 		session.commit();
 		session.close();
 		
-		if(pw.equals(dto.getMember_id()))
+		if(pw.equals(dto.getMember_pw()))
 			cnt=1;
 		else
 			cnt=0;

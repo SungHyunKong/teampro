@@ -55,7 +55,7 @@
 	    select * from member where member_id=#{member_id}
 	</select>
 	<select id="getMember_pw" parameterType="String" resultType="String">
-	    select member_pw from member where member_id=#{member_pw}
+	    select member_pw from member where member_id=#{member_id}
 	</select>
 	<update id="updateMember" parameterType="BoardMemberDTO">
 	    update member set member_pw=#{member_pw}, member_name=#{member_name}, member_birth=#{member_birth}, member_gender=#{member_gender}, member_email=#{member_email}
