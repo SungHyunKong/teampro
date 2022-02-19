@@ -52,7 +52,7 @@
 								class="far fa-square"></i> <span>전자결제</span></a></li>
 					</ul>
 					<ul class="sidebar-menu">
-						<li class=active><a class="nav-link" href="${ctp}/boardList.bo"><i
+						<li class=active><a class="nav-link" href="${ctp}/boardList.do"><i
 								class="far fa-square"></i> <span>질문게시판</span></a></li>
 					</ul>
 					<ul class="sidebar-menu">

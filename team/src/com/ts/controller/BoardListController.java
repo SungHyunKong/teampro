@@ -50,7 +50,7 @@ public class BoardListController implements Controller{
 		
 		
 		if(id==null) {
-			return "redirect:memberLogin.do";
+			return "loginForm";
 		} else
 		    return "board_list";
 	
