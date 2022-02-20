@@ -45,6 +45,9 @@
 	<select id="isMember" parameterType="String" resultType="String">
 	    select member_pw from member where member_id=#{member_id}
 	</select>
+	<select id="idCheck" parameterType="String" resultType="String">
+	    select member_id from member where member_id=#{member_id}
+	</select>
 	<select id="getAllMember" resultType="BoardMemberDTO">
 	    select * from member
 	</select>

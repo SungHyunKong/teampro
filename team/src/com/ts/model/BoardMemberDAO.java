@@ -45,14 +45,22 @@ public class BoardMemberDAO {
 		int cnt=-1;
 		
 		String pw=(String)session.selectOne("isMember", dto.getMember_id());
-		
+		//System.out.println(pw);
 		session.commit();
 		session.close();
 		
-		if(pw.equals(dto.getMember_pw()))
-			cnt=1;
-		else
-			cnt=0;
+		if(pw==null) {
+			cnt=-1;
+			
+		} else {
+			if(pw.equals(dto.getMember_pw())) {
+				cnt=1;
+			} else {
+				cnt=0;
+			}
+		}
+		
+
 		return cnt;
 	}
 	
@@ -95,6 +103,24 @@ public class BoardMemberDAO {
 		session.commit();
 		session.close();
 		return succ;
+	}
+	
+	public int idCheck(BoardMemberDTO dto) {
+		SqlSession session= sqlsessionFactory.openSession();
+		int cnt=-1;
+		//System.out.println(dto.getMember_id());
+		String id=(String)session.selectOne("idCheck", dto.getMember_id());
+		session.commit();
+		session.close();
+		
+		if(id==null) {
+			cnt=0;
+		} else {
+			cnt=1;
+		}
+		
+		
+		return cnt;
 	}
 	
 }

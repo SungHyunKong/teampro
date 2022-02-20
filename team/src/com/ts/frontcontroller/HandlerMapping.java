@@ -24,7 +24,7 @@ public class HandlerMapping {
 		mappings.put("/memberDetail.do", new MemberDetailController());
 		mappings.put("/memberDelete.do", new MemberDeleteController());
 		mappings.put("/memberUpdate.do", new MemberUpdateController());
-		
+		mappings.put("/memberidcheck.do", new MemberIdCheckController());
 		mappings.put("/boardList.do", new BoardListController());
 		mappings.put("/boardAdd.do", new BoardAddController());
 		mappings.put("/boardDetail.do", new BoardDetailController());
