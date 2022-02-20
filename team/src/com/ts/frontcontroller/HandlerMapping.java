@@ -31,6 +31,8 @@ public class HandlerMapping {
 		mappings.put("/boardModifyView.do", new BoardModifyViewController());
 		mappings.put("/boardModifyController.do", new BoardModifyController());
 		mappings.put("/boardDeleteController.do", new BoardDeleteController());
+		mappings.put("/boardReplyView.do", new BoardReplyViewController());
+		mappings.put("/boardReply.do", new BoardReplyController());
 		
 	}
 	

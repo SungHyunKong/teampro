@@ -12,6 +12,13 @@ String replaceContent = board_content.replaceAll("\r\n", "<br>");
 <meta charset="UTF-8">
 <title>board view jsp</title>
 <script type="text/javascript">
+function fnReply(num) {
+	if(confirm("답글을 작성하시겠습니까?")) {
+		location.href = "boardReplyView.do?qa_num=" + num;
+	}
+	return false;
+}
+
 function fnUpdate(num) {
 	if(confirm("수정하시겠습니까?")) {
 		location.href = "boardModifyView.do?qa_num=" + num;
@@ -69,7 +76,8 @@ function fnDelete(num) {
 		</tr>
 		<tr align="center">
 			<td colspan="4">
-				<input type="button" value="수정하기" onclick="fnUpdate('<%=dto.getQa_num() %>')" />
+			    <input type="button" value="답글쓰기" onclick="fnReply('<%=dto.getQa_num() %>')"/>
+                <input type="button" value="수정하기" onclick="fnUpdate('<%=dto.getQa_num() %>')" />
 				<input type="button" value="삭제하기" onclick="fnDelete('<%=dto.getQa_num() %>')" />
 				<input type="button" value="목록보기" onclick="location.href='boardList.do'"/>
 			</td>

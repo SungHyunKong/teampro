@@ -95,4 +95,20 @@
 	<update id="boardUpdate" parameterType="QaBoardDTO">
 	    update qa set qa_subject=#{qa_subject}, qa_content=#{qa_content} where qa_num=#{qa_num}
 	</update>
+	<!-- <select id="maxQanum" resultType="Integer" parameterType="QaBoardDTO">
+	    select max(qa_num) from qa
+	</select>
+	<update id="reSet" parameterType="QaBoardDTO">
+	    update qa set qa_re_seq=#{qa_re_seq}+1 where qa_re_ref=#{qa_re_ref} and qa_re_seq>#{qa_re_seq}
+	</update> -->
+	<insert id="boardReply" parameterType="QaBoardDTO">
+	   <selectKey keyProperty="qa_num" resultType="Integer" order="BEFORE">
+	        select ifnull(max(qa_num)+1, 1) from qa;
+	    </selectKey>
+	    insert into qa(qa_num, qa_id, qa_subject, qa_content, qa_file, qa_re_ref, qa_re_lev, qa_re_seq, qa_readcount, qa_date)
+	    values (#{qa_num},#{qa_id},#{qa_subject},#{qa_content},#{qa_file},#{qa_re_ref},#{qa_re_lev}+1,#{qa_re_seq}+1,#{qa_readcount},now())
+	</insert>
+	<update id="updateRef" parameterType="QaBoardDTO">
+	    update qa set qa_re_seq=#{qa_re_seq}+1 where qa_re_ref=#{qa_re_ref} and qa_re_seq>#{qa_re_seq}
+	</update>
 </mapper>

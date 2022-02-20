@@ -102,5 +102,17 @@ public class QaBoardDAO {
 		return num;
 		
 	}
+	public int boardReply(QaBoardDTO dto) {
+		SqlSession session= sqlsessionFactory.openSession();
+		int n=session.update("updateRef", dto);
+		int cnt=session.insert("boardReply", dto);
+		
+		session.commit();
+		session.close();
+		System.out.println(n);
+		System.out.println(dto.getQa_re_lev());
+		System.out.println(cnt);
+		return cnt;
+	}
 
 }
