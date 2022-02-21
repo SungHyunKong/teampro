@@ -4,9 +4,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="core" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<%
-	ArrayList<BoardMemberDTO> list = (ArrayList<BoardMemberDTO>) request.getAttribute("list");
-%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,7 +45,7 @@
 									<core:forEach var="i" items="${list }">
 										<tr>
 											<td><a
-												href="memberView.do?member_id=${i.member_id }">${i.member_id }</a></td>
+											s	href="memberView.do?member_id=${i.member_id }">${i.member_id }</a></td>
 											<td>${i.member_name }</td>
 											<td align="left"><core:if
 													test="${i.member_id eq 'admin' }">삭제 금지</core:if> <core:if

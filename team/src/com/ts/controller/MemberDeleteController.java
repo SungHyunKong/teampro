@@ -21,6 +21,7 @@ public class MemberDeleteController implements Controller {
 		String id=(String) session.getAttribute("id");
 		
 		
+			
 		
 		if(id==null) {
 			
@@ -37,6 +38,7 @@ public class MemberDeleteController implements Controller {
 			BoardMemberDAO dao= new BoardMemberDAO();
 			dao.deleteMember(member_id);
 			ArrayList<BoardMemberDTO> list= new ArrayList<BoardMemberDTO>();
+			list=dao.getAllMember();
 			request.setAttribute("list", list);
 			return "member_list";
 		}
