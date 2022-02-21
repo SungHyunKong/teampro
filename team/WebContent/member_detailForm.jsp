@@ -93,7 +93,7 @@ String ssid=(String)session.getAttribute("id");
 									<tr>
 										<td colspan="2"><input type="submit" value="수정하기" /> <input
 											type="reset" value="초기화하기" /> <input type="button"
-											value="게시판 보기" onclick="location.href='boardList.bo'" /></td>
+											value="게시판 보기" onclick="location.href='boardList.do'" /></td>
 									</tr>
 								</table>
 								</form>

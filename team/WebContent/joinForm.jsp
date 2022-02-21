@@ -83,7 +83,7 @@ function fn_idcheck() {
 									<tr>
 										<th>생년월일</th>
 										<td><input type="text" name="member_birth"
-											required="required"  /></td>
+											required="required" placeholder="yyyymmdd" /></td>
 									</tr>
 									<tr>
 										<th>성별</th>
